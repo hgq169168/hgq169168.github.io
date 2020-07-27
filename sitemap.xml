@@ -4,7 +4,14 @@
   <url>
     <loc>http://yoursite.com/link/index.html</loc>
     
-    <lastmod>2020-07-27T11:27:28.131Z</lastmod>
+    <lastmod>2020-07-27T12:17:25.977Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/messageboard/index.html</loc>
+    
+    <lastmod>2020-07-27T12:06:43.272Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/source/friends.html</loc>
     
     <lastmod>2020-07-27T11:23:03.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/messageboard/index.html</loc>
-    
-    <lastmod>2020-07-27T11:11:56.538Z</lastmod>
     
   </url>
   

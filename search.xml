@@ -50,7 +50,7 @@
 
 <h3 id="8-声明数组"><a href="#8-声明数组" class="headerlink" title="8.声明数组"></a>8.声明数组</h3><p>(1) var arr = new Array()</p>
 <p>(2)var arr = []</p>
-<p><img src= "/img/loading.gif" data-src="C:%5CUsers%5Cwoduyou%5Cblog%5Cimages%5C%E6%95%B0%E7%BB%84.png" alt="数组" title="数组"></p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/07/26/CgLxRWZNG7voeqH.png" alt="数组" title="数组"></p>
 <h3 id="9-构造函数："><a href="#9-构造函数：" class="headerlink" title="9.构造函数："></a>9.构造函数：</h3><p>(1)function 函数名(形参) {} //形参可以没有  ，下同</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;   <span class="comment">//return只返回一个值，且其后面的语句不执行，如果没有return，返回udefined</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//不执行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn(<span class="number">2</span>, <span class="number">4</span>)); <span class="comment">// 返回6</span></span><br></pre></td></tr></table></figure>
 
@@ -58,7 +58,7 @@
 <p>注意点：实参个数多余形参个数，以形参个数为准，反则，返回NaN （不利用伪数组）</p>
 <p>(3)arguments伪数组:</p>
 <p>arguments对象可以获取传入函数的值，它将这些值保存在一个数组里面，因此可以将arguments看作一个数组使用</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function fn1() &#123;</span><br><span class="line">	var num &#x3D; 0;</span><br><span class="line">	for (i &#x3D; 0; i &lt; arguments.length; i++) &#123;&#x2F;&#x2F;arguments可以接受多个变量</span><br><span class="line">		num +&#x3D; arguments[i];</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(num);&#x2F;&#x2F;8</span><br><span class="line">&#125;</span><br><span class="line">fn1(1, 2, 5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;<span class="comment">//arguments可以接受多个变量</span></span><br><span class="line">		num += <span class="built_in">arguments</span>[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(num);<span class="comment">//8</span></span><br><span class="line">&#125;</span><br><span class="line">fn1(<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -88,7 +88,6 @@
 
 <h3 id="6-通过父子关系获得对应节点"><a href="#6-通过父子关系获得对应节点" class="headerlink" title="6.通过父子关系获得对应节点"></a>6.通过父子关系获得对应节点</h3><p>(1)node.parentNode //父级节点</p>
 <p>(2)node.childNodes //子级节点（会包含元素、文本）</p>
-<p>(3)<a href="https://i.loli.net/2020/07/26/CgLxRWZNG7voeqH.png" target="_blank" rel="noopener">https://i.loli.net/2020/07/26/CgLxRWZNG7voeqH.png</a></p>
 ]]></content>
   </entry>
   <entry>

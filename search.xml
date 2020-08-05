@@ -374,6 +374,10 @@
 <p>​                （3）为父元素添加overflow: hidden;</p>
 <p>​                    其他方法：浮动、固定、绝对定位的盒子不会有塌陷问题。</p>
 <p>提醒：行内元素，尽量只设置左右外边距。</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: length;  //参数length可以是数值或百分比 (也可以分别写四个值)</p>
+<p>1.如果盒子为正方形，想要变成一个圆，把参数值改为高度一般，或写50%</p>
+<p>2。如果盒子为矩形，想要变成一个椭圆，把参数值改为50%</p>
+<p>3.如果盒子为矩形，想要变成一个输入框（横着的、数学上的），把参数值改为高度的一半。</p>
 ]]></content>
   </entry>
   <entry>
@@ -386,6 +390,62 @@
 <p>第三部分：<br>结尾</p>
 <hr>
 <p><a href="http://www.dddd" target="_blank" rel="noopener">www.dddd</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>今日小结8</title>
+    <url>/2020/08/05/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%938/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日还是css"><a href="#今日还是css" class="headerlink" title="今日还是css"></a><center>今日还是css</center></h2><h3 id="盒子、文字阴影"><a href="#盒子、文字阴影" class="headerlink" title="盒子、文字阴影"></a>盒子、文字阴影</h3><p>1.盒子阴影box-shadow: h-shadow v-shadow [blur] [spread] [color] [inset];</p>
+<p>​    blur（模糊距离）、spread（阴影尺寸）、insert（内部阴影）</p>
+<p>2.文字阴影text-shadow: h-shadow v-shadow [blur] [color]</p>
+<h3 id="网页布局准则："><a href="#网页布局准则：" class="headerlink" title="网页布局准则："></a>网页布局准则：</h3><p>1.第一准则：多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动</p>
+<p>2.第二准则：先设置盒子大小，再设置盒子的位置</p>
+<h3 id="三种传统布局方式（要三种结合使用才更好）：标准流、浮动、定位"><a href="#三种传统布局方式（要三种结合使用才更好）：标准流、浮动、定位" class="headerlink" title="三种传统布局方式（要三种结合使用才更好）：标准流、浮动、定位"></a>三种传统布局方式（要三种结合使用才更好）：标准流、浮动、定位</h3><p>1.标准流：行内元素、行内块元素、块元素的标准</p>
+<p>2.浮动float：用于创建浮动框，将其移到一边，知道左边边缘或右边缘触及包含块或另外一个浮动框的边缘</p>
+<p>浮动特性：</p>
+<p>（1）浮动元素会脱离标准流，不在保留原来的位置</p>
+<p>（2）如果多个盒子都设置了浮动，则它们安照属性值一行内显示，并且顶端对齐排列</p>
+<p>（3）浮动元素具有行内块特性（但相邻元素之间不会有空隙），任何元素都可以浮动。添加了浮动后，都具有行内块元素相似的特性。如果块级盒子没有设置宽度，默认和父亲一样宽，但该盒子添加浮动后，它的大小根据其内容决定（依旧没设置宽度的话）</p>
+<p>浮动布局注意点：</p>
+<p>（1）先用标准流的父元素排列上下位置，之后再用内部子元素辞去浮动排列左右</p>
+<p>（2）一个元素浮动了，理论上其余兄弟元素也要浮动。浮动的盒子只会影响其后面的的标准流，不会影响前面的标准流。</p>
+<p>清除浮动：</p>
+<p>​    选择器 {clear: 属性;} 属性有left、right、both（常用）</p>
+<p>​    清除浮动的策略：闭合浮动</p>
+<p>​    清除浮动的方法：</p>
+<p>​    （1）额外标签法（隔墙法）：在浮动元素末尾添加一个空的标签。然后再引入选择器 {clear: 属性;}</p>
+<p>​    （2）给父级元素添加overflow，其属性可以时hidden、auto、scroll。如overflow: hidden;</p>
+<p>​    （3）给父级元素添加 :after伪元素（升级版额外标签法，利用css创建一个额外标签</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.clearfix:after &#123;</span><br><span class="line">          content: &quot;&quot;;</span><br><span class="line">          display: block;</span><br><span class="line">          height: 0;</span><br><span class="line">          clear: both;</span><br><span class="line">          visibility: hidden;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      .clearfix &#123;</span><br><span class="line">          &#x2F;* IE6、7 专有 *&#x2F;</span><br><span class="line">          *zoom: 1;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    （4）给父级元素添加双位元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.clearfix:before,</span><br><span class="line">       .clearfix:after &#123;</span><br><span class="line">           content: &quot;&quot;;</span><br><span class="line">           display: table;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       .clearfix:after &#123;</span><br><span class="line">           clear: both;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       .clearfix &#123;</span><br><span class="line">           *zoom: 1;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.定位：定位模式+边偏移</p>
+<p>（1）position: 属性； //属性有relative（相对定位）、absolute（绝对定位）、fixed（固定定位）、static（静态定位）、Sticky（粘性定位）</p>
+<p>（2）边偏移：top、 bottom、left、right</p>
+<p>​    top: 30px;</p>
+<p>​    left: 40px;</p>
+<p>（3）静态定位（static），无定位的意思</p>
+<p>（4）相对定位（relative）：是元素在移动位置的时候，是相对它原来的位置来说的</p>
+<p>​    特点：移动位置参照点是自己原来的位置；原来的位置继续保留，后面的盒子仍然以标准流的方式来对待它。</p>
+<p>（5）绝对定位（absolute）：</p>
+<p>​    特点：如果没有祖先元素或祖先元素没有定位，则以浏览器（document文档）为准来移动；如果祖先有定位（相对、绝对、固定都行），则以最近一级的有定位祖先为参考的移动位置；绝对定位不占用位置</p>
+<p>（6）固定定位（fixed）：</p>
+<p>​    特点：以浏览器可视窗口为参照点移动元素；不占用原来位置</p>
+<p>（7）粘性定位（Sticky）：（相对定位与固定定位的结合）</p>
+<p>​    特点：以浏览器窗口为参照点移动元素；占用原来的位置；必须添加top、left、right、bottom其中一个才有效，否则不会固定在某一位置</p>
+<p>提醒：“子绝父相”</p>
+<h3 id="定位叠放顺序z-index："><a href="#定位叠放顺序z-index：" class="headerlink" title="定位叠放顺序z-index："></a>定位叠放顺序z-index：</h3><p>选择器 {z-index: 1;}</p>
+<p>特点：</p>
+<p>1.数值可以是正整数、负整数或0，默认是auto，数值越大越靠上</p>
+<p>2.如果属性相同，则按书写顺序，后来者居上</p>
+<p>3.数字不可以添加单位</p>
+<p>4.只有定位的盒子才有z-index</p>
+<h3 id="定位注意点"><a href="#定位注意点" class="headerlink" title="定位注意点"></a>定位注意点</h3><p>1.加了固定定位和绝对定位的盒子，不可以通过margin:auto;,实现水平居中（没反应）。可以通过left: 50%; 再margin-left: -width/2;（负的自身宽度一半）来实现水平居中</p>
+<p>2.定位特殊性：</p>
 ]]></content>
   </entry>
 </search>

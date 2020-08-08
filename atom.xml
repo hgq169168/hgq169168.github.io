@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hgq169168.github.io/"/>
-  <updated>2020-08-07T02:22:00.048Z</updated>
+  <updated>2020-08-08T14:46:06.978Z</updated>
   <id>https://hgq169168.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今日小结11</title>
+    <link href="https://hgq169168.github.io/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/"/>
+    <id>https://hgq169168.github.io/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/</id>
+    <published>2020-08-08T13:57:59.000Z</published>
+    <updated>2020-08-08T14:46:06.978Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日是css3"><a href="#今日是css3" class="headerlink" title="今日是css3"></a><center>今日是css3</center></h2><h3 id="css3-动画animation"><a href="#css3-动画animation" class="headerlink" title="css3 动画animation"></a>css3 动画animation</h3><p>制定动画分为两步：1.先定义动画 2.再调用动画 3.持续时间</p><p>1.用@keyframes定义动画（类似定义类选择器）</p><p>@keyframes 动画名称 {</p><p>​    0% {}    //也可以用from</p><p>​    100%{}    //to</p><p>}    //可以设置任意次数，0%、25%、50%、100%</p><p>2、调用动画：</p><p>animation-name: 动画名称;</p><p>3.持续时间:</p><p>animation-duration: 时间;</p><p>动画常用属性：</p><p>@keyframes：规定动画</p><p>animation：所用动画简写。除了animation-play-state</p><p>animation-name：规定@keyframes动画名称（必须的）</p><p>animation-duration：完成动画的时间（秒或毫秒），默认0（必须的）</p><p>animation-timing-function：曲线速度，默认“ease”</p><p>animation-iteration-count：循环次数，默认1，无限循环infinite</p><p>animation-direction：下一周期是否逆向播放，默认“normal”，“alternate”逆播放</p><p>animation-fill-mode：结束后状态，保持“forwards”，回到起始位置“backwards”（默认）</p><p>animation-play-state：是否正在行动或暂停，running（默认），“pause”暂停</p><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/AoVtWkTyfDUlQZG.png" alt=""></p><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/BUZIG7E1wr2i6ys.png" alt=""></p><p>动画简写：</p><p>​    animation: 动画名称 持续时间 运动曲线 何时播放 播放次数 是否放向播放  起始或结束状态</p><p>opacity: 1;  不透明度</p><h3 id="3D转换："><a href="#3D转换：" class="headerlink" title="3D转换："></a>3D转换：</h3><p>3D位移：translate3d(x, y, z)</p><p>透视：perspecitve</p><p>3D 旋转：rotate3d(x, y, z)</p><p>3D呈现：transform-style</p><p>1.位移translate3的（x, y, z)中的x, y, z不可以省略, 如没有则写0（正负值都可以）。（z值越大，物体图像越大）</p><p>2.透视perspective特点：</p><p>​    （1）透视单位为像素（px），如：perspective: 400px;</p><p>​    （2）视距越大，图像越小</p><p>​    （3）透视是写再被观察元素的父（祖先也许）盒子上的</p><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/rYBjfLQuFbo6qJP.png" alt=""></p><p>3.3D旋转rotate3d(x, y, z),可以正负值。</p><p>​    transform: roate3d(1, 1, 0, 45deg);</p><p>​    transform: rotateX(45deg);</p><p>​    transform: rotateY(90deg);</p><p>​    transform: rotateZ(45deg);</p><p>4.3D呈现：transform-style: preserve-3d</p><p>​    transform-style: flat; 不开启3d立体空间（默认）</p><p>​    transform-style: preserve-3d; 开启3d立体空间</p><p>​    注意：是给父级元素添加的，作用在子级元素上</p><h3 id="私有前缀：为了兼容低版本浏览器"><a href="#私有前缀：为了兼容低版本浏览器" class="headerlink" title="私有前缀：为了兼容低版本浏览器"></a>私有前缀：为了兼容低版本浏览器</h3><p>1.-moz-：firfox浏览器私有属性</p><p>2.-ms-：ie浏览器私有属性</p><p>3.-webik-：safari、chrome浏览器私有属性</p><p>4.-o-：opeara浏览器私有属性</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\js\APlayer.min.js&quot; class=&quot;aplayer-se
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>今日小结10</title>

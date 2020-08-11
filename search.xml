@@ -364,7 +364,7 @@
 <p>巨坑：</p>
 <p>1.当父盒子father1（没高度）里面的子元素是浮动元素，并且其子元素有高度（100px），占满了一行。这时父盒子father2（没高度）排列在father1下面，father2的子元素也是浮动元素（高度为100px），占满一行。此时，如果直接给father2设置margin-top: 15px; ，这时会发现father2的子元素没有向下移动15px，为何？</p>
 <p>就知道你不懂了，请看解答！</p>
-<p>原因在于没给father1（标准流）清除浮动！因为father1没高度，并且其子元素是浮动的（脱标了），同时father2（标准流）也是这种情况，所以当给father2添加margin-top: 15px; 时，father2实际是有增加了上外边距15px，只不过是离father1有15px距离（和father1一样，都被father1的子元素压着），而father1的子元素高度为100px，由于100px&gt;15px，所以father2的子元素（浮动的）紧挨着father1的子元素（浮动）。当然，如果给father2设置margin-top: 150px; ，father2的元素是会往下移动15px的。</p>
+<p>原因在于没给father1（标准流）清除浮动！因为father1没高度，并且其子元素是浮动的（脱标了），同时father2（标准流）也是这种情况，所以当给father2添加margin-top: 15px; 时，father2实际是有增加了上外边距15px，只不过是离father1有15px距离（和father1一样，都被father1的子元素压着），而father1的子元素高度为100px，由于100px&gt;15px，所以father2的子元素（浮动的）紧挨着father1的子元素（浮动）。当然，如果给father2设置margin-top: 115px; ，father2的元素是会往下移动15px的。</p>
 <p>心得：</p>
 <p>好好学习，天天向上！我们永远只是个需要努力的菜鸟</p>
 ]]></content>

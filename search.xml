@@ -848,4 +848,89 @@
 <p>好好学习，天天向上！我们永远只是个需要努力的菜鸟</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>今日小结16</title>
+    <url>/2020/08/13/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9316/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天复习js基础"><a href="#今天复习js基础" class="headerlink" title="今天复习js基础"></a><center>今天复习js基础</center></h2><h3 id="js须知"><a href="#js须知" class="headerlink" title="js须知"></a>js须知</h3><p>1.只声明不赋值：</p>
+<p>var age;   console.log(age) ;  返回udefined</p>
+<p>2.不声明不赋值：</p>
+<p>console.log(age); 报错</p>
+<p>3.不声明只赋值：</p>
+<p>age = 10;  console.log(age); 返回10</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>1.简单数据类型：Number，String，Boolean，udefined，Null</p>
+<p>2.复杂数据类型：object</p>
+<h3 id="Number数字类型："><a href="#Number数字类型：" class="headerlink" title="Number数字类型："></a>Number数字类型：</h3><p>最大值：Number.MAX_VALUE</p>
+<p>最小值：Number.MIN_VALUE</p>
+<p>无穷大：Infinity</p>
+<p>无穷小：-Infinity</p>
+<p>非数字：NaN</p>
+<p>isNaN()可以判断给数字，是数字返回false，不是数字返回true</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(isNaN(666));  &#x2F;&#x2F;返回false</span><br><span class="line">console.log(isNaN(&quot;kkk&quot;); &#x2F;&#x2F;返回true</span><br></pre></td></tr></table></figure>
+
+<h3 id="String字符串：用单引号或双引号括起来"><a href="#String字符串：用单引号或双引号括起来" class="headerlink" title="String字符串：用单引号或双引号括起来"></a>String字符串：用单引号或双引号括起来</h3><p>1.length获取字符串长度：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;hello&#39;; </span><br><span class="line">console.log(str.length)  &#x2F;&#x2F;返回5</span><br></pre></td></tr></table></figure>
+
+<p>2.字符串 + 任何类型 = 拼接后的新字符串</p>
+<h3 id="Boolean类型：只有true和false"><a href="#Boolean类型：只有true和false" class="headerlink" title="Boolean类型：只有true和false"></a>Boolean类型：只有true和false</h3><p>1.true与数字进行算数运算时，当中1来看；</p>
+<p>2.false与数字进行算数运算时，当中0来看；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(6 + true); &#x2F;&#x2F;7</span><br><span class="line">console.log(6 - false); &#x2F;&#x2F;6</span><br><span class="line">console.log(6 % true); &#x2F;&#x2F;0</span><br><span class="line">console.log(0 &#x2F; 6); &#x2F;&#x2F;0</span><br></pre></td></tr></table></figure>
+
+<h3 id="undefined：一个变量声明未赋值，就时undefined"><a href="#undefined：一个变量声明未赋值，就时undefined" class="headerlink" title="undefined：一个变量声明未赋值，就时undefined"></a>undefined：一个变量声明未赋值，就时undefined</h3><p>1.undefined + 1 = NaN</p>
+<p>2.undefined + ‘pink’ = ‘undefinedpink’</p>
+<h3 id="null空值"><a href="#null空值" class="headerlink" title="null空值"></a>null空值</h3><p>1.null + 1 = 1</p>
+<p>2.null + ‘pink’ = ‘nullpink’</p>
+<h3 id="typeof-检测变量类型"><a href="#typeof-检测变量类型" class="headerlink" title="typeof 检测变量类型"></a>typeof 检测变量类型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;pink&#39;;</span><br><span class="line">console.log(styeof str); &#x2F;&#x2F;返回String</span><br><span class="line">var timer &#x3D; null;</span><br><span class="line">console.log(styeof timer); &#x2F;&#x2F;返回object  （这个特殊）</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换字符串"><a href="#转换字符串" class="headerlink" title="转换字符串"></a>转换字符串</h3><p>1.toString()</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 1;</span><br><span class="line">alert(num.toString());&#x2F;&#x2F;注意用法</span><br></pre></td></tr></table></figure>
+
+<p>2.String()强制转换</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 1;</span><br><span class="line">alert(String(num))</span><br></pre></td></tr></table></figure>
+
+<p>3.+ 号拼接转换（常用）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 1;</span><br><span class="line">alert(num + &#39;&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换位数字类型"><a href="#转换位数字类型" class="headerlink" title="转换位数字类型"></a>转换位数字类型</h3><p>1.ParseInt(string)：转换位整数（注意：string是指字符串数字类型）</p>
+<p>2.ParseFloat(string)：转换位浮点数</p>
+<p>3.Number()：转换位数字类型</p>
+<p>4.js隐式转换（-、*、/）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;11&#39;;</span><br><span class="line">alert(str - 0); 返回11</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换位布尔类型"><a href="#转换位布尔类型" class="headerlink" title="转换位布尔类型"></a>转换位布尔类型</h3><p>1.BOoolean()</p>
+<p>注意：代表空、否定的值会被转为false，如0、NaN、null、undefined、“”等；其余值会被转换为true（空数组[],会被转换为true）</p>
+<h3 id="编译器与解析器"><a href="#编译器与解析器" class="headerlink" title="编译器与解析器"></a>编译器与解析器</h3><p>1.编译器：在代码执行前编译，生产中间代码文件</p>
+<p>2.解析器：在运行时进行及时解析并立即执行</p>
+<h3 id="后置自增-：先返回原值，后自加1"><a href="#后置自增-：先返回原值，后自加1" class="headerlink" title="后置自增 ：先返回原值，后自加1"></a>后置自增 ：先返回原值，后自加1</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var age &#x3D; 10;</span><br><span class="line">alert(age++ + 10) &#x2F;&#x2F;10</span><br><span class="line">alert(age) &#x2F;&#x2F;11</span><br></pre></td></tr></table></figure>
+
+<h3 id="比较运算符："><a href="#比较运算符：" class="headerlink" title="比较运算符："></a>比较运算符：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(18 &#x3D;&#x3D; &quot;18&quot;);&#x2F;&#x2F;返回true，&#x3D;&#x3D; 默认把字符串的数字类型转换成数字型</span><br><span class="line">console.log(18 &#x3D;&#x3D;&#x3D; &quot;18&quot;)&#x2F;&#x2F;返回false，&#x3D;&#x3D;&#x3D; 要求值和类型都相同</span><br></pre></td></tr></table></figure>
+
+<p>短路运算：当有多个表达式（值）时，左边的表达式值可以确定结果时，就不再基线运算右边的表达式的值</p>
+<p>1.逻辑与：表达式1 &amp;&amp; 表达式2</p>
+<p>（1）如果表达式1为真，则返回表达式2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(33 &amp;&amp; 66) &#x2F;&#x2F;返回66</span><br></pre></td></tr></table></figure>
+
+<p>（2）如果表达式1为假，则返回表达式1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(0 &amp;&amp; 66) &#x2F;&#x2F;返回0</span><br></pre></td></tr></table></figure>
+
+<p>2.逻辑或：表达式1 &amp;&amp; 表达式2</p>
+<p>（1）如果表达式1为真，则返回表达式1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(33 &amp;&amp; 66) &#x2F;&#x2F;返回33</span><br></pre></td></tr></table></figure>
+
+<p>（1）如果表达式1为假，则返回表达式2</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(0 &amp;&amp; 66) &#x2F;&#x2F;返回66</span><br></pre></td></tr></table></figure>
+
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/13/bzaRmvxKGuSYsTh.png" alt=""></p>
+<h3 id="三元表达式：条件表达式-表达式1-表达式2"><a href="#三元表达式：条件表达式-表达式1-表达式2" class="headerlink" title="三元表达式：条件表达式 ? 表达式1 : 表达式2"></a>三元表达式：条件表达式 ? 表达式1 : 表达式2</h3><p>如果条件表达式 为真，则返回表达式1的值，否则返回表达式2的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 5;</span><br><span class="line">var result &#x3D; num &gt; 2 ? &#39;是的&#39; : &#39;不是的&#39;;</span><br><span class="line">console.log(result)&#x2F;&#x2F;返回 是的</span><br></pre></td></tr></table></figure>
+
+<h3 id="do-while循环：先执行一遍循环体，再判断条件"><a href="#do-while循环：先执行一遍循环体，再判断条件" class="headerlink" title="do while循环：先执行一遍循环体，再判断条件"></a>do while循环：先执行一遍循环体，再判断条件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var i &#x3D; 1;</span><br><span class="line">do &#123;</span><br><span class="line">	console.log(&#39;hello&#39;);</span><br><span class="line">	i++</span><br><span class="line">&#125; while ( i &lt;&#x3D; 100);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="continue-和-break关键字"><a href="#continue-和-break关键字" class="headerlink" title="continue 和 break关键字"></a>continue 和 break关键字</h3><p>1.continue用于立即跳出本次循环，继续下一次循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 0;</span><br><span class="line">for (var i &#x3D; 1; i &lt;&#x3D; 100; i++) &#123;</span><br><span class="line">	if (i % 7 &#x3D;&#x3D; 0) &#123;</span><br><span class="line">		continue;</span><br><span class="line">	&#125;</span><br><span class="line">	num +&#x3D; i;</span><br><span class="line">&#125;</span><br><span class="line">console.log(num) &#x2F;&#x2F;求1~100内非7倍速数的累加和</span><br></pre></td></tr></table></figure>
+
+<p>2.break用与立即跳出整个循环（循环体结束）</p>
+]]></content>
+  </entry>
 </search>

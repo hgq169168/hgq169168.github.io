@@ -933,4 +933,70 @@
 <p>2.break用与立即跳出整个循环（循环体结束）</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>今日小结17</title>
+    <url>/2020/08/14/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9317/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天复习js基础"><a href="#今天复习js基础" class="headerlink" title="今天复习js基础"></a><center>今天复习js基础</center></h2><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>1.创建方式</p>
+<p>（1）利用new创建数组</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; new Array();&#x2F;&#x2F;创建一个长度为0的空数组</span><br><span class="line">var arr1 &#x3D;  new Array(2);&#x2F;&#x2F;创建一个长度为2新的空数组（包含两个undefined）</span><br><span class="line">var arr2 &#x3D; new Array(1, 2, &#39;dd&#39;);&#x2F;&#x2F;[1, 2, &#39;dd&#39;]</span><br></pre></td></tr></table></figure>
+
+<p>（2）利用字面量创建数组</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 4];</span><br></pre></td></tr></table></figure>
+
+<p>2.获取数组元素：通过下标</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 4];</span><br><span class="line">console.log(arr[0]);&#x2F;&#x2F;1</span><br><span class="line">console.log(arr[3]);&#x2F;&#x2F;返回undefined</span><br></pre></td></tr></table></figure>
+
+<p>3.获取数组长度length</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 4];</span><br><span class="line">console.log(arr.length);&#x2F;&#x2F;3</span><br></pre></td></tr></table></figure>
+
+<p>4.新增数组元素</p>
+<p>（1）通过修改长度length来新增数组元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 4];</span><br><span class="line">arr.length &#x3D; 5;</span><br><span class="line">console.log(arr); &#x2F;&#x2F;[1, 2, 4, undefined, undefined]</span><br></pre></td></tr></table></figure>
+
+<p>(2)通过修改数组索引号追加数组元素</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 4];</span><br><span class="line">arr[3] &#x3D; 6;&#x2F;&#x2F;追加</span><br><span class="line">arr[4] &#x3D; 8;&#x2F;&#x2F;追加</span><br><span class="line">arr[0] &#x3D; 9;&#x2F;&#x2F;替换</span><br></pre></td></tr></table></figure>
+
+<p>注意：不要给数组名赋值，否证会覆盖以前的数据</p>
+<p>冒泡排序：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [5, 4, 3, 2, 1];</span><br><span class="line">for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">	for (var j &#x3D; 0; j &lt; arr.length - i - 1; j ++) &#123;</span><br><span class="line">		var temp &#x3D; arr[j];</span><br><span class="line">		arr[j] &#x3D; arr[j + 1];</span><br><span class="line">		arr[j + 1] &#x3D; temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(arr);&#x2F;&#x2F;[1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数使用分为两步：声明函数和调用函数"><a href="#函数使用分为两步：声明函数和调用函数" class="headerlink" title="函数使用分为两步：声明函数和调用函数"></a>函数使用分为两步：声明函数和调用函数</h3><p>1.声明函数： function 函数名() {函数体；}  //括号内可以写形参</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function sayHi () &#123;</span><br><span class="line">	console.log(&#39;Hi&#39;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.调用函数：函数名();  //括号内可以写实参</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sayHi(); &#x2F;&#x2F;Hi</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果实参个数多于形参个数，会取形参的个数参与运算；如果过实参个数少于形参个数，多出的形参为undefined。</p>
+<p>3.函数的返回值格式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function 函数名() &#123;</span><br><span class="line">	return 需要返回的结构;</span><br><span class="line">&#125;</span><br><span class="line">函数名();</span><br><span class="line"></span><br><span class="line">function cook(aru) &#123;</span><br><span class="line">	retrun aru;</span><br><span class="line">&#125;</span><br><span class="line">console.log(cook(&#39;空心菜&#39;));</span><br></pre></td></tr></table></figure>
+
+<p>注意：（1）return后面的语句不再执行，起到终止函数的功能；</p>
+<p>​            （2）return只能返回一个值。如果用逗号隔开，以最后一个为准；</p>
+<p>​            （3）函数如果没有return，则返回undefined</p>
+<p>4.函数表达式（匿名函数）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;var 变量名 &#x3D; function() &#123;&#125;;</span><br><span class="line">var fn &#x3D; function() &#123;</span><br><span class="line">	console.log(&#39;Hi&#39;);</span><br><span class="line">&#125;</span><br><span class="line">fn(); &#x2F;&#x2F;fn是变量名，不是函数名</span><br></pre></td></tr></table></figure>
+
+<p>5.arguments（只有函数才有）：所有函数都内置了一个arguments对象，其存储了传递过来的所有实参。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function fn() &#123;</span><br><span class="line">	console.log(arguments); &#x2F;&#x2F;[1, 2, 4] 伪数组</span><br><span class="line">&#125;</span><br><span class="line">fn(1, 2, 4);</span><br></pre></td></tr></table></figure>
+
+<p>伪数组特点：</p>
+<p>（1）具有length属性</p>
+<p>（2）按索引方式存储数据</p>
+<p>（3）不具有数组的push、pop等方法</p>
+<h3 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h3><p>1.全局变量：在全局作用域下的变量（在函数内部没有声明，直接赋值的变量属于全局变量）</p>
+<p>2.局部变量：在局部作用域下的变量（如函数内部的变量，函数的形参可以当作一个局部变量）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">function fn() &#123;</span><br><span class="line">	var num1 &#x3D; 200;</span><br><span class="line">	num2 &#x3D; 300;</span><br><span class="line">&#125;</span><br><span class="line">console.log(num)&#x2F;&#x2F; 100</span><br><span class="line">console.log(num1)&#x2F;&#x2F;报错</span><br><span class="line">console.log(num2)&#x2F;&#x2F;300</span><br></pre></td></tr></table></figure>
+
+<p>注意：全局变量只有浏览器关闭时才会销毁，比较占资源</p>
+<p>​            局部变量与程序执行完毕就会销毁，比较节省资源</p>
+<h3 id="js引擎运行js分为两步：预解析和代码运行"><a href="#js引擎运行js分为两步：预解析和代码运行" class="headerlink" title="js引擎运行js分为两步：预解析和代码运行"></a>js引擎运行js分为两步：预解析和代码运行</h3><p>1.预解析：js引擎会把结束里面所有var和function提升到当前作用域的最前面</p>
+<p>（1）变量预解析（变量提升）：把所有的变量声明提升到当前作用域最前面，不提升赋值操作</p>
+<p>（2）函数预解析（函数提升）：把所有的函数声明都提升到当前作用域最前面，不调用函数</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;例子1</span><br><span class="line">console.log(num);&#x2F;&#x2F;报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例子2</span><br><span class="line">console.log(num1);&#x2F;&#x2F;undefined</span><br><span class="line">var num1 &#x3D; 10;</span><br><span class="line">&#x2F;&#x2F;相当于执行以下代码：</span><br><span class="line">var num1;</span><br><span class="line">console.log(num1);</span><br><span class="line"> num1 &#x3D; 10;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例子3</span><br><span class="line">fn();&#x2F;&#x2F;66</span><br><span class="line">function fn() &#123;</span><br><span class="line">	console.log(66);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;相当于执行以下代码：</span><br><span class="line">function fn() &#123;</span><br><span class="line">	console.log(66);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例子4</span><br><span class="line">fun();&#x2F;&#x2F;报错</span><br><span class="line">var fun &#x3D; function() &#123;</span><br><span class="line">	console.log(666);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;相当于执行以下代码：</span><br><span class="line">var fun;</span><br><span class="line">fun();</span><br><span class="line">fun &#x3D; function() &#123;</span><br><span class="line">	console.log(666);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;例子5</span><br><span class="line">var num3 &#x3D; 10;</span><br><span class="line">fun();&#x2F;&#x2F;返回undefined</span><br><span class="line">function fun() &#123;</span><br><span class="line">	console.log(num3);</span><br><span class="line">	var num3 &#x3D; 20;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;相当于执行以下代码：</span><br><span class="line">var num3;</span><br><span class="line">function fun() &#123;</span><br><span class="line">	var num3;</span><br><span class="line">	console.log(num3);</span><br><span class="line">	num3 &#x3D; 20;</span><br><span class="line">&#125;</span><br><span class="line">num3 &#x3D; 10;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.代码执行：从上往下执行</p>
+]]></content>
+  </entry>
 </search>

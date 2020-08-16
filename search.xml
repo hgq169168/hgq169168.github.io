@@ -1169,6 +1169,65 @@
 <p>要实现正确的排序，需要如下操作：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr1 &#x3D; [1, 22, 4, 34, 6, 7];</span><br><span class="line">arr1.sort(function(a, b)) &#123;</span><br><span class="line">	&#x2F;&#x2F;return a-b;&#x2F;&#x2F;升序 [1, 4, 6, 7, 22, 34]</span><br><span class="line">	retrun b-a;&#x2F;&#x2F;降序 [34, 22, 7, 6, 4, 1]</span><br><span class="line">&#125;</span><br><span class="line">console.log(arr1);</span><br></pre></td></tr></table></figure>
 
+<p>5.数组索引方法</p>
+<p>（1）indexOf(‘要查找的元素’[, 起始位置])：查找给定元素的第一个索引，存在则返回索引号，不存在返回-1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [&#39;red&#39;, &#39;green&#39;, &#39;pink&#39;, &#39;blue&#39;, &#39;pink&#39;];</span><br><span class="line">console.log(arr.indexOf(&#39;pink&#39;));&#x2F;&#x2F;2</span><br><span class="line">console.log(arr.indexOf(&#39;pink&#39;, 3));&#x2F;&#x2F;4,从索引号为3的位置开始查找</span><br><span class="line">console.log(arr.indexOf(&#39;yellow&#39;));&#x2F;&#x2F;-1</span><br></pre></td></tr></table></figure>
+
+<p>（2）lastIndexOf(‘要查找的元素’[, 起始位置])：查找给定元素的最后一个索引（从后面往前查找），存在则返回索引号，不存则返回-1</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [&#39;red&#39;, &#39;green&#39;, &#39;pink&#39;, &#39;blue&#39;, &#39;pink&#39;];</span><br><span class="line">console.log(arr.lastIndexOf(&#39;pink&#39;));&#x2F;&#x2F;4</span><br><span class="line">console.log(arr.lastIndexOf(&#39;yellow&#39;));&#x2F;&#x2F;-1</span><br></pre></td></tr></table></figure>
+
+<p>数组去重案例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">	var newArr &#x3D; [];</span><br><span class="line">	for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">		if (newArr.indexOf(arr[i]) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">			newArr.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newArr;</span><br><span class="line">&#125;</span><br><span class="line">var arr1 &#x3D; [&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;k&#39;, &#39;a&#39;];</span><br><span class="line">console.log(unique(arr1));&#x2F;&#x2F;[&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;k&#39;]</span><br></pre></td></tr></table></figure>
+
+<p>6.数组转换为字符串</p>
+<p>（1）soString()：把数组转换为字符串，逗号分隔每一项</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];</span><br><span class="line">console.log(arr.toString());&#x2F;&#x2F;a,b,c,d</span><br></pre></td></tr></table></figure>
+
+<p>（2）join(‘分隔符’)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]; </span><br><span class="line">console.log(arr.join());&#x2F;&#x2F;a,b,c,d  没指定分隔符，默认是逗号</span><br><span class="line">console.log(arr.join(&#39;-&#39;));&#x2F;&#x2F;a-b-c-d</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h3><p>1.字符串的不可变性：内存里的值不可变，虽然看上去改变了内容，但是其实是地址发生了变化，在内存中开辟了一个新的内容空间</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var num &#x3D; 1;  </span><br><span class="line">console.log(num);&#x2F;&#x2F;返回1</span><br><span class="line">num &#x3D; 2;&#x2F;&#x2F;与上面的地址不一样</span><br><span class="line">console.log(num);&#x2F;返回2</span><br></pre></td></tr></table></figure>
+
+<p>注意：字符串的所有方法中，都不会修改字符串本身，操作完成会返回一个新的字符串（地址不一样）</p>
+<p>2.根据字符串返回位置</p>
+<p>（1）indexOf(‘要查找的字符’[,起始位置])</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;改革春风吹满地，春天来了&#39;</span><br><span class="line">console.log(str.indexOf(&#39;春&#39;));&#x2F;&#x2F;2</span><br><span class="line">console.log(str.indexOf(&#39;春&#39;, 3))&#x2F;&#x2F;8</span><br></pre></td></tr></table></figure>
+
+<p>（2）lastIndexOf(‘要查找的字符’[,起始位置])：从后面往前查找</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;改革春风吹满地，春天来了&#39;</span><br><span class="line">console.log(str.lastIndexOf(&#39;春&#39;));&#x2F;&#x2F;8</span><br><span class="line">console.log(str.lastIndexOf(&#39;春&#39;, 3))&#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
+
+<p>查找某字符串出现的位置及次数案例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;adaoddklsdijgle&#39;;</span><br><span class="line">var index &#x3D; str.indexOf(&#39;a&#39;);&#x2F;&#x2F;查找a字符</span><br><span class="line">var num &#x3D; 0;</span><br><span class="line">while (index !&#x3D;&#x3D; -1) &#123;</span><br><span class="line">	console.log(str(index);</span><br><span class="line">	num++;</span><br><span class="line">	index &#x3D; str.indexOf(&#39;a&#39;, index + 1);</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#39;a出现的次数：&#39; + num);</span><br></pre></td></tr></table></figure>
+
+<p>3.根据位置返回字符串</p>
+<p>（1）charAt(index)：获取指定位置处的字符串</p>
+<p>（2）charCodeAt(index)：获取指定位置处字符串的ASCII码</p>
+<p>（3）str[index]</p>
+<p>统计出现次数最多字符及次数案例：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;asdfjkdhfklasda&#39;;</span><br><span class="line">var obj &#x3D; &#123;&#125;;</span><br><span class="line">for (i &#x3D; 0; i &lt; str.length; i++) &#123;</span><br><span class="line">	var chars &#x3D; str.charAt(i);</span><br><span class="line">	if (obj[chars]) &#123;  &#x2F;&#x2F;没有obj[chars],返回undefined</span><br><span class="line">		obj[chars]++;</span><br><span class="line">	&#125;</span><br><span class="line">	else &#123;</span><br><span class="line">		obj[chars] &#x3D; 1;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var max &#x3D; 0;</span><br><span class="line">var ch &#x3D; &#39;&#39;;</span><br><span class="line">for (var k in obj) &#123;  &#x2F;&#x2F;k是属性名，obj[k]是属性值</span><br><span class="line">	if (obj[k] &gt; max) &#123;</span><br><span class="line">		max &#x3D; obj[k];</span><br><span class="line">		ch &#x3D; k;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#39;最多的字符是：&#39; + ch + &#39;有&#39; + max + &#39;个&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>4.字符串操作方法：</p>
+<p>（1）concat(string1, straing2,….)：连接两个多多个字符串，等效于+</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;red&#39;;</span><br><span class="line">congsole.log(str.concat(&#39;blue&#39;, &#39;yellow&#39;));&#x2F;&#x2F;redblueyellow</span><br></pre></td></tr></table></figure>
+
+<p>（2）substr(start, length)：截取字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;改革春风吹满地，春天来了&#39;;</span><br><span class="line">console.log(str.substr(2, 2))&#x2F;&#x2F;春风</span><br></pre></td></tr></table></figure>
+
+<p>（3）slice(start, end)：截取字符串，从start开始到end（不包含end，staet和end为小标）</p>
+<p>（4）substring(start, end)：截取字符串，不允许为负值</p>
+<p>（5）replace(‘被替换的字符串’, ‘替换为的字符串’)：只替换第一个</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var str &#x3D; &#39;andyandy&#39;;</span><br><span class="line">console.log(str.replace(&#39;a&#39;, &#39;*&#39;));&#x2F;&#x2F;*ndyandy</span><br></pre></td></tr></table></figure>
+
+<h3 id="简单数据类型与复杂数据类型"><a href="#简单数据类型与复杂数据类型" class="headerlink" title="简单数据类型与复杂数据类型"></a>简单数据类型与复杂数据类型</h3><p>1.简单数据类型（存储的是值本身）包括：string、number、Boolean、undefined、null</p>
+<p>（1）简单数据类型是在栈里面直接开辟一个空间存放值的。</p>
+<p>2.复杂数类型（存储的是地址）：通过new关键字创建的对象，如Object、Array、Date等</p>
+<p>（1）复杂数据类型首先在栈里面存放一个地址（十六进制的），然这个指向堆里的数据（在堆里面存值）</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>今日小结19</title>
+    <url>/2020/08/16/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9319/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script>]]></content>
   </entry>
 </search>

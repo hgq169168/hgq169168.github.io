@@ -91,58 +91,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结12</title>
-    <url>/2020/08/09/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9312/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="移动端基础"><a href="#移动端基础" class="headerlink" title="移动端基础"></a><center>移动端基础</center></h2><h3 id="移动端调试方法："><a href="#移动端调试方法：" class="headerlink" title="移动端调试方法："></a>移动端调试方法：</h3><p>1.chrom DevTools（谷歌浏览器）的模拟手机调试。（其它浏览器也行）</p>
-<p>2.搭建本地web服务器，手机和服务器一个局域网内，通过手机访问服务器</p>
-<p>3.使用外网服务器，直接IP或域名访问</p>
-<h3 id="视口（布局视口、视觉视口、理想视口）："><a href="#视口（布局视口、视觉视口、理想视口）：" class="headerlink" title="视口（布局视口、视觉视口、理想视口）："></a>视口（布局视口、视觉视口、理想视口）：</h3><p>1.布局视口：</p>
-<p>（1）一般移动端设备的浏览器都默认设置了布局视口，用于解决早期的pc端页面再手机上显示的问题</p>
-<p>（2）ios、Android基本都将这个视口分辨率设置为980px，所以pc上的网页大多能在手机上呈现，只不过元素看上去很小，一般默认可以手动缩放网页</p>
-<p>2.理想视口：</p>
-<p>（1）要手动添加meta视口标签，通知浏览器操作</p>
-<p>（2）meta视口标签主要目的：布局视口的宽度应该与理想视口的宽度一样</p>
-<p>3.meta视口标签：</p>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-<p>属性：</p>
-<p>​    width：可以设置device-width等特殊值</p>
-<p>​    initial-scale：初始化缩放比，大于0的数字</p>
-<p>​    maximum-scale：最大缩放比，大于0的数字</p>
-<p>​    minimum-scale：最小缩放比，大于0的数字</p>
-<p>​    user-scable：是否可以手动缩放，yes或no（1或0）</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/J5CFV2YHXoI8vn1.png" alt=""></p>
-<h3 id="二倍图"><a href="#二倍图" class="headerlink" title="二倍图"></a>二倍图</h3><p>解说：我们要一个50x50像素（css像素）的图片，直接放到iPhone8上会放大两倍（其他手机可能不是两倍），像素变为100x100像素就会模糊</p>
-<p>1.二倍图策略：用一个100x100像素的图片，然后手动把图片压缩为50x50像素，放大iPhone8上，友变成100x100像素，但是不会模糊（因为图片本来就是100x100像素的）</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/XKgGw3NtEUqoRz2.png" alt=""></p>
-<p>2.背景缩放：background-size（规定背景图像的大小）</p>
-<p>​    background-size: 宽 高；</p>
-<p>​    注意：</p>
-<p>​        （1）单位有长度、百分比、cover、contain</p>
-<p>​        （2）cover把背景图的宽度和高度等比例拉伸，当图片宽度和高度都覆盖盒子（父盒子），可能有部分背景图显示不全（因为图片的宽度和高度比例不是1：1，有部分超出了盒子）</p>
-<p>​        （3）contain把背景图的高度和宽度等比例拉伸，当图片宽度或高度铺满了盒子就不再拉伸，可能会有空白区域（因为图片的宽度和高度比例不是1：1）</p>
-<p>​        （4）如果写background-size: 50%; 只写一个宽，不写高，会按图片的比例来缩放图片，写%的话，是以父盒子的宽度和高度来计算</p>
-<h3 id="移动端开发选择"><a href="#移动端开发选择" class="headerlink" title="移动端开发选择"></a>移动端开发选择</h3><p>移动端主力方案：</p>
-<p>1.单独制作移动端页面（主流）</p>
-<p>（1）流式布局（百分比布局）；</p>
-<p>（2）flex弹性布局（推荐）；</p>
-<p>（3）less+rem+媒体查询布局；</p>
-<p>（4）混合布局</p>
-<p>2.响应式页面兼容移动端：</p>
-<p>移动端计算解决方案：</p>
-<p>1.css初始换normolize.css（直接引入这个文件）</p>
-<p>作用：</p>
-<p>（1）保护了有价值的默认值</p>
-<p>（2）修复了浏览器的bug</p>
-<p>（3）是模块化的</p>
-<p>（4）拥有详细的文档</p>
-<p>2.盒子模型box-sizing</p>
-<p>传统盒子模型：box-sizing: content-b0x;  （默认）</p>
-<p>css3盒子模型：box_-sizing: border-box;</p>
-<p>3.特殊样式：<br><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/scDTNWKfmrIMZ6G.png" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
     <title>今日小结1</title>
     <url>/2020/07/29/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%931/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="1-对jquery的理解："><a href="#1-对jquery的理解：" class="headerlink" title="1.对jquery的理解："></a>1.对jquery的理解：</h3><p>（1）jquery是对一些常用的原生js方法和属性的封装的一个数据库，$是JQuery的顶级对象（别称，一般用$来代替JQuery（注意大小写），如：</p>
@@ -178,6 +126,59 @@
 <hr>
 <h3 id="2-关于hexo博客的小提醒"><a href="#2-关于hexo博客的小提醒" class="headerlink" title="2.关于hexo博客的小提醒"></a>2.关于hexo博客的小提醒</h3><p>注意了！注意了！ 文章的标准不能跨级，不然会导致在文章内无法显示menu栏和目录！（跨级是指，比如说，你有一个标题是一级，然而紧接着第二个标题为三级或以下，又或者你有一标题是三级，然而紧接着第二个标题为二级，这便是跨级！</p>
 <p>////知道我为什么知道吗，因为我tm就被这坑了一天才找出原因！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>今日小结11</title>
+    <url>/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日是css3"><a href="#今日是css3" class="headerlink" title="今日是css3"></a><center>今日是css3</center></h2><h3 id="css3-动画animation"><a href="#css3-动画animation" class="headerlink" title="css3 动画animation"></a>css3 动画animation</h3><p>制定动画分为两步：1.先定义动画 2.再调用动画 3.持续时间</p>
+<p>1.用@keyframes定义动画（类似定义类选择器）</p>
+<p>@keyframes 动画名称 {</p>
+<p>​    0% {}    //也可以用from</p>
+<p>​    100%{}    //to</p>
+<p>}    //可以设置任意次数，0%、25%、50%、100%</p>
+<p>2、调用动画：</p>
+<p>animation-name: 动画名称;</p>
+<p>3.持续时间:</p>
+<p>animation-duration: 时间;</p>
+<p>动画常用属性：</p>
+<p>@keyframes：规定动画</p>
+<p>animation：所用动画简写。除了animation-play-state</p>
+<p>animation-name：规定@keyframes动画名称（必须的）</p>
+<p>animation-duration：完成动画的时间（秒或毫秒），默认0（必须的）</p>
+<p>animation-timing-function：曲线速度，默认“ease”</p>
+<p>animation-iteration-count：循环次数，默认1，无限循环infinite</p>
+<p>animation-direction：下一周期是否逆向播放，默认“normal”，“alternate”逆播放</p>
+<p>animation-fill-mode：结束后状态，保持“forwards”，回到起始位置“backwards”（默认）</p>
+<p>animation-play-state：是否正在行动或暂停，running（默认），“pause”暂停</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/AoVtWkTyfDUlQZG.png" alt=""></p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/BUZIG7E1wr2i6ys.png" alt=""></p>
+<p>动画简写：</p>
+<p>​    animation: 动画名称 持续时间 运动曲线 何时播放 播放次数 是否放向播放  起始或结束状态</p>
+<p>opacity: 1;  不透明度</p>
+<h3 id="3D转换："><a href="#3D转换：" class="headerlink" title="3D转换："></a>3D转换：</h3><p>3D位移：translate3d(x, y, z)</p>
+<p>透视：perspecitve</p>
+<p>3D 旋转：rotate3d(x, y, z)</p>
+<p>3D呈现：transform-style</p>
+<p>1.位移translate3的（x, y, z)中的x, y, z不可以省略, 如没有则写0（正负值都可以）。（z值越大，物体图像越大）</p>
+<p>2.透视perspective特点：</p>
+<p>​    （1）透视单位为像素（px），如：perspective: 400px;</p>
+<p>​    （2）视距越大，图像越小</p>
+<p>​    （3）透视是写再被观察元素的父（祖先也许）盒子上的</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/rYBjfLQuFbo6qJP.png" alt=""></p>
+<p>3.3D旋转rotate3d(x, y, z),可以正负值。</p>
+<p>​    transform: roate3d(1, 1, 0, 45deg);</p>
+<p>​    transform: rotateX(45deg);</p>
+<p>​    transform: rotateY(90deg);</p>
+<p>​    transform: rotateZ(45deg);</p>
+<p>4.3D呈现：transform-style: preserve-3d</p>
+<p>​    transform-style: flat; 不开启3d立体空间（默认）</p>
+<p>​    transform-style: preserve-3d; 开启3d立体空间</p>
+<p>​    注意：是给父级元素添加的，作用在子级元素上</p>
+<h3 id="私有前缀：为了兼容低版本浏览器"><a href="#私有前缀：为了兼容低版本浏览器" class="headerlink" title="私有前缀：为了兼容低版本浏览器"></a>私有前缀：为了兼容低版本浏览器</h3><p>1.-moz-：firfox浏览器私有属性</p>
+<p>2.-ms-：ie浏览器私有属性</p>
+<p>3.-webik-：safari、chrome浏览器私有属性</p>
+<p>4.-o-：opeara浏览器私有属性</p>
 ]]></content>
   </entry>
   <entry>
@@ -280,56 +281,55 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结11</title>
-    <url>/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日是css3"><a href="#今日是css3" class="headerlink" title="今日是css3"></a><center>今日是css3</center></h2><h3 id="css3-动画animation"><a href="#css3-动画animation" class="headerlink" title="css3 动画animation"></a>css3 动画animation</h3><p>制定动画分为两步：1.先定义动画 2.再调用动画 3.持续时间</p>
-<p>1.用@keyframes定义动画（类似定义类选择器）</p>
-<p>@keyframes 动画名称 {</p>
-<p>​    0% {}    //也可以用from</p>
-<p>​    100%{}    //to</p>
-<p>}    //可以设置任意次数，0%、25%、50%、100%</p>
-<p>2、调用动画：</p>
-<p>animation-name: 动画名称;</p>
-<p>3.持续时间:</p>
-<p>animation-duration: 时间;</p>
-<p>动画常用属性：</p>
-<p>@keyframes：规定动画</p>
-<p>animation：所用动画简写。除了animation-play-state</p>
-<p>animation-name：规定@keyframes动画名称（必须的）</p>
-<p>animation-duration：完成动画的时间（秒或毫秒），默认0（必须的）</p>
-<p>animation-timing-function：曲线速度，默认“ease”</p>
-<p>animation-iteration-count：循环次数，默认1，无限循环infinite</p>
-<p>animation-direction：下一周期是否逆向播放，默认“normal”，“alternate”逆播放</p>
-<p>animation-fill-mode：结束后状态，保持“forwards”，回到起始位置“backwards”（默认）</p>
-<p>animation-play-state：是否正在行动或暂停，running（默认），“pause”暂停</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/AoVtWkTyfDUlQZG.png" alt=""></p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/BUZIG7E1wr2i6ys.png" alt=""></p>
-<p>动画简写：</p>
-<p>​    animation: 动画名称 持续时间 运动曲线 何时播放 播放次数 是否放向播放  起始或结束状态</p>
-<p>opacity: 1;  不透明度</p>
-<h3 id="3D转换："><a href="#3D转换：" class="headerlink" title="3D转换："></a>3D转换：</h3><p>3D位移：translate3d(x, y, z)</p>
-<p>透视：perspecitve</p>
-<p>3D 旋转：rotate3d(x, y, z)</p>
-<p>3D呈现：transform-style</p>
-<p>1.位移translate3的（x, y, z)中的x, y, z不可以省略, 如没有则写0（正负值都可以）。（z值越大，物体图像越大）</p>
-<p>2.透视perspective特点：</p>
-<p>​    （1）透视单位为像素（px），如：perspective: 400px;</p>
-<p>​    （2）视距越大，图像越小</p>
-<p>​    （3）透视是写再被观察元素的父（祖先也许）盒子上的</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/rYBjfLQuFbo6qJP.png" alt=""></p>
-<p>3.3D旋转rotate3d(x, y, z),可以正负值。</p>
-<p>​    transform: roate3d(1, 1, 0, 45deg);</p>
-<p>​    transform: rotateX(45deg);</p>
-<p>​    transform: rotateY(90deg);</p>
-<p>​    transform: rotateZ(45deg);</p>
-<p>4.3D呈现：transform-style: preserve-3d</p>
-<p>​    transform-style: flat; 不开启3d立体空间（默认）</p>
-<p>​    transform-style: preserve-3d; 开启3d立体空间</p>
-<p>​    注意：是给父级元素添加的，作用在子级元素上</p>
-<h3 id="私有前缀：为了兼容低版本浏览器"><a href="#私有前缀：为了兼容低版本浏览器" class="headerlink" title="私有前缀：为了兼容低版本浏览器"></a>私有前缀：为了兼容低版本浏览器</h3><p>1.-moz-：firfox浏览器私有属性</p>
-<p>2.-ms-：ie浏览器私有属性</p>
-<p>3.-webik-：safari、chrome浏览器私有属性</p>
-<p>4.-o-：opeara浏览器私有属性</p>
+    <title>今日小结12</title>
+    <url>/2020/08/09/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9312/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="移动端基础"><a href="#移动端基础" class="headerlink" title="移动端基础"></a><center>移动端基础</center></h2><h3 id="移动端调试方法："><a href="#移动端调试方法：" class="headerlink" title="移动端调试方法："></a>移动端调试方法：</h3><p>1.chrom DevTools（谷歌浏览器）的模拟手机调试。（其它浏览器也行）</p>
+<p>2.搭建本地web服务器，手机和服务器一个局域网内，通过手机访问服务器</p>
+<p>3.使用外网服务器，直接IP或域名访问</p>
+<h3 id="视口（布局视口、视觉视口、理想视口）："><a href="#视口（布局视口、视觉视口、理想视口）：" class="headerlink" title="视口（布局视口、视觉视口、理想视口）："></a>视口（布局视口、视觉视口、理想视口）：</h3><p>1.布局视口：</p>
+<p>（1）一般移动端设备的浏览器都默认设置了布局视口，用于解决早期的pc端页面再手机上显示的问题</p>
+<p>（2）ios、Android基本都将这个视口分辨率设置为980px，所以pc上的网页大多能在手机上呈现，只不过元素看上去很小，一般默认可以手动缩放网页</p>
+<p>2.理想视口：</p>
+<p>（1）要手动添加meta视口标签，通知浏览器操作</p>
+<p>（2）meta视口标签主要目的：布局视口的宽度应该与理想视口的宽度一样</p>
+<p>3.meta视口标签：</p>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<p>属性：</p>
+<p>​    width：可以设置device-width等特殊值</p>
+<p>​    initial-scale：初始化缩放比，大于0的数字</p>
+<p>​    maximum-scale：最大缩放比，大于0的数字</p>
+<p>​    minimum-scale：最小缩放比，大于0的数字</p>
+<p>​    user-scable：是否可以手动缩放，yes或no（1或0）</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/J5CFV2YHXoI8vn1.png" alt=""></p>
+<h3 id="二倍图"><a href="#二倍图" class="headerlink" title="二倍图"></a>二倍图</h3><p>解说：我们要一个50x50像素（css像素）的图片，直接放到iPhone8上会放大两倍（其他手机可能不是两倍），像素变为100x100像素就会模糊</p>
+<p>1.二倍图策略：用一个100x100像素的图片，然后手动把图片压缩为50x50像素，放大iPhone8上，友变成100x100像素，但是不会模糊（因为图片本来就是100x100像素的）</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/XKgGw3NtEUqoRz2.png" alt=""></p>
+<p>2.背景缩放：background-size（规定背景图像的大小）</p>
+<p>​    background-size: 宽 高；</p>
+<p>​    注意：</p>
+<p>​        （1）单位有长度、百分比、cover、contain</p>
+<p>​        （2）cover把背景图的宽度和高度等比例拉伸，当图片宽度和高度都覆盖盒子（父盒子），可能有部分背景图显示不全（因为图片的宽度和高度比例不是1：1，有部分超出了盒子）</p>
+<p>​        （3）contain把背景图的高度和宽度等比例拉伸，当图片宽度或高度铺满了盒子就不再拉伸，可能会有空白区域（因为图片的宽度和高度比例不是1：1）</p>
+<p>​        （4）如果写background-size: 50%; 只写一个宽，不写高，会按图片的比例来缩放图片，写%的话，是以父盒子的宽度和高度来计算</p>
+<h3 id="移动端开发选择"><a href="#移动端开发选择" class="headerlink" title="移动端开发选择"></a>移动端开发选择</h3><p>移动端主力方案：</p>
+<p>1.单独制作移动端页面（主流）</p>
+<p>（1）流式布局（百分比布局）；</p>
+<p>（2）flex弹性布局（推荐）；</p>
+<p>（3）less+rem+媒体查询布局；</p>
+<p>（4）混合布局</p>
+<p>2.响应式页面兼容移动端：</p>
+<p>移动端计算解决方案：</p>
+<p>1.css初始换normolize.css（直接引入这个文件）</p>
+<p>作用：</p>
+<p>（1）保护了有价值的默认值</p>
+<p>（2）修复了浏览器的bug</p>
+<p>（3）是模块化的</p>
+<p>（4）拥有详细的文档</p>
+<p>2.盒子模型box-sizing</p>
+<p>传统盒子模型：box-sizing: content-b0x;  （默认）</p>
+<p>css3盒子模型：box_-sizing: border-box;</p>
+<p>3.特殊样式：<br><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/09/scDTNWKfmrIMZ6G.png" alt=""></p>
 ]]></content>
   </entry>
   <entry>
@@ -974,6 +974,94 @@
 ]]></content>
   </entry>
   <entry>
+    <title>今日小结5</title>
+    <url>/2020/08/02/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%935/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="jQuery自动触发事件"><a href="#jQuery自动触发事件" class="headerlink" title="jQuery自动触发事件"></a>jQuery自动触发事件</h3><p>（1）element.click(); //自动触发点击事件，会触发元素默认行为</p>
+<p>（2）element.trigger(“type”);  //type是指事件，如click、mouseenter等，会触发元素默认行为</p>
+<p>（3）element.triggerHandler(“type”); //不会触发元素默认行为</p>
+<p>请看代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;title&gt;自动触发事件&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style&gt;</span></span><br><span class="line"><span class="regexp">        div &#123;</span></span><br><span class="line"><span class="regexp">            width: 100px;</span></span><br><span class="line"><span class="regexp">            height: 100px;</span></span><br><span class="line"><span class="regexp">            background-color: pink;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>style&gt;</span><br><span class="line">    &lt;script src=<span class="string">"jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        $(function () &#123;</span></span><br><span class="line"><span class="regexp">            $("div").on("click", function () &#123;</span></span><br><span class="line"><span class="regexp">                alert(111);</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ (1)click()方法</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ $("div").click();/</span><span class="regexp">/会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/(2)trigger()方法</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ $("div").trigger("click");/</span><span class="regexp">/会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/(3)triggerhandler()</span></span><br><span class="line"><span class="regexp">            $("div").triggerHandler("click");  /</span><span class="regexp">/不会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            $("input").on("focus", function () &#123;</span></span><br><span class="line"><span class="regexp">                $(this).val("你好吗");</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            $("input").triggerHandler("focus"); /</span><span class="regexp">/不会出现光标在框框里面闪烁的默认行为</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&lt;/</span>div&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="jQuery阻止冒泡"><a href="#jQuery阻止冒泡" class="headerlink" title="jQuery阻止冒泡"></a>jQuery阻止冒泡</h3><p>阻止默认行为：event.preventDefault() 或者return false</p>
+<p>阻止冒泡：event.stopPropagation()</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;title&gt;事件对象&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="jquery.min.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: <span class="number">100</span>px;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        $(function () &#123;</span></span><br><span class="line"><span class="regexp">            $(document).on("click", function () &#123;</span></span><br><span class="line"><span class="regexp">                console.log("点击了document");</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            $("div").on("click", function (event) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ console.log(event);</span></span><br><span class="line"><span class="regexp">                console.log("点击了div");</span></span><br><span class="line"><span class="regexp">                event.stopPropagation();/</span><span class="regexp">/阻止冒泡</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="jQuery对象拷贝"><a href="#jQuery对象拷贝" class="headerlink" title="jQuery对象拷贝"></a>jQuery对象拷贝</h3><p>$.extend([deep,] target, object, object1, [objectN]);</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/02/c7pS5xM1iGgLOd2.png" alt=""></p>
+<p>请看代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;jQuery对象拷贝&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;&#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj)（浅拷贝）</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     sex: &quot;m&quot;,</span><br><span class="line">            &#x2F;&#x2F;     id: 0</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj) &#x2F;&#x2F;（浅拷贝）相同的属性明会被覆盖原来的数据 如：id&#x3D;0被覆盖为id&#x3D;1</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     sex: &quot;m&quot;,</span><br><span class="line">            &#x2F;&#x2F;     id: 0,</span><br><span class="line">            &#x2F;&#x2F;     msg: &#123;</span><br><span class="line">            &#x2F;&#x2F;         sex: &quot;男&quot;</span><br><span class="line">            &#x2F;&#x2F;     &#125;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;,</span><br><span class="line">            &#x2F;&#x2F;     msg: &#123;</span><br><span class="line">            &#x2F;&#x2F;         age: 18</span><br><span class="line">            &#x2F;&#x2F;     &#125;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj)</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);&#x2F;&#x2F;（浅拷贝）返回msg：&#123;age: 18&#125;， 会覆盖sex：&quot;男&quot;</span><br><span class="line">            &#x2F;&#x2F; &#x2F;&#x2F;浅拷贝（把被拷贝对象复杂数据类型中的地址拷贝给目标对象），发生修改后，会影响被拷贝对像</span><br><span class="line">            &#x2F;&#x2F; targetObj.msg.age &#x3D; 20;</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; console.log(obj);</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;深拷贝，前面加true，完全克隆（拷贝的是对象，不是地址），修改目标对像不会影响被拷贝对象</span><br><span class="line">            var targetObj &#x3D; &#123;</span><br><span class="line">                sex: &quot;m&quot;,</span><br><span class="line">                id: 0,</span><br><span class="line">                msg: &#123;</span><br><span class="line">                    sex: &quot;男&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            var obj &#x3D; &#123;</span><br><span class="line">                id: 1,</span><br><span class="line">                name: &quot;andy&quot;,</span><br><span class="line">                msg: &#123;</span><br><span class="line">                    age: 18</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            &#x2F;&#x2F;深拷贝，前面加true，完全克隆（拷贝的是对象，不是地址），修改目标对像不会影响被拷贝对象</span><br><span class="line">            $.extend(true, targetObj, obj)</span><br><span class="line">            console.log(targetObj);&#x2F;&#x2F;浅拷贝）返回的msg：&#123;sex: &quot;男&quot;， age: 18&#125;，</span><br><span class="line">            targetObj.msg.age &#x3D; 20;</span><br><span class="line">            console.log(targetObj);</span><br><span class="line">            console.log(obj);</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="jQuery多库共存"><a href="#jQuery多库共存" class="headerlink" title="jQuery多库共存"></a>jQuery多库共存</h3><p>（1）把jquery的$符号写成jQuery</p>
+<p>（2）使用$.noConflict()，重新命名$。如var xx  =$.noConflict()  ///$可能需要写成jQuery</p>
+<p>请看代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;多库共存&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            function $(ele) &#123;</span><br><span class="line">                return document.querySelector(ele);</span><br><span class="line">            &#125;</span><br><span class="line">            console.log($(&quot;div&quot;));</span><br><span class="line">            console.log($(&quot;span&quot;));</span><br><span class="line">            console.log(jQuery(&quot;span&quot;));</span><br><span class="line">            &#x2F;&#x2F;1.如果$符号冲突，我们就使用 jQuery (jQuery是替换jquery中的$,而不是上面的函数名$)</span><br><span class="line">            &#x2F;&#x2F;遍历</span><br><span class="line">            &#x2F;&#x2F; $.each();&#x2F;&#x2F;$是jquery定义的，我们上面定义同名$()函数，不具有 $.each()，要改名 jQuery</span><br><span class="line">            jQuery.each();</span><br><span class="line">            &#x2F;&#x2F;2.让jquery释放对$的控制权， 让我们来决定 </span><br><span class="line">            var suibian &#x3D; jQuery.noConflict();</span><br><span class="line">            console.log(suibian(&quot;span&quot;));</span><br><span class="line">        &#125;) </span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;span&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐几个jQuery插件网站："><a href="#推荐几个jQuery插件网站：" class="headerlink" title="推荐几个jQuery插件网站："></a>推荐几个jQuery插件网站：</h3><p>（1）<a href="http://www.htmleaf.com/" target="_blank" rel="noopener">http://www.htmleaf.com/</a>   jQuery之家。。免费的喔</p>
+<p>（2）<a href="http://www.jq22.com/" target="_blank" rel="noopener">http://www.jq22.com/</a>  </p>
+<p>（3）<a href="https://v3.bootcss.com/" target="_blank" rel="noopener">https://v3.bootcss.com/</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>今日小结7</title>
+    <url>/2020/08/04/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%937/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天还是css"><a href="#今天还是css" class="headerlink" title="今天还是css"></a><center>今天还是css</center></h2><h3 id="HTML元素包括块元素、行内元素、行内块元素"><a href="#HTML元素包括块元素、行内元素、行内块元素" class="headerlink" title="HTML元素包括块元素、行内元素、行内块元素"></a>HTML元素包括块元素、行内元素、行内块元素</h3><p>1.块级元素特点：</p>
+<p>（1）独占一行</p>
+<p>（2）高度、宽度、外边距和内边距可以控制</p>
+<p>（3）宽度默认是父级元素宽度的100%</p>
+<p>（4）是一个容器，里面可以放行内或块元素</p>
+<p>注意：文字类的块元素内不能使用块元素；p、h1~h6等文字块元素内不能放其他块元素</p>
+<p>常见的块元素：p 、h1~h6、div、ul、ol、li等</p>
+<p>2.行内元素特点：</p>
+<p>（1）一行可以显示多个，中间有空隙</p>
+<p>（2）高度、宽度、直接设置无效</p>
+<p>（3）默认宽度为它本身内容宽度</p>
+<p>（4）行内元素只能收纳文本或行内元素</p>
+<p>注意：链接里面不能再放链接；链接里面可以放块元素，但给链接换一下块级模式更安全</p>
+<p>常见的行内元素：a、strong、b、em、i、del、s、ins、u、pan</p>
+<p>3.行内块元素特点：<br>（1）和相邻行内元素在同一行上，但它们之间会有空白缝隙</p>
+<p>（2）默认宽度是它本身内容的宽度</p>
+<p>（3）高度、宽度、外边框、内边框可以控制</p>
+<p>常见行内块元素：img、input、td</p>
+<h3 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h3><p>（1）转换为块元素：display: block;</p>
+<p>（2）转换为行内元素：display: inline;</p>
+<p>（3）转换为行内块元素：display: inline-block;</p>
+<h3 id="css的-三大属性：层叠性、继承性、优先级"><a href="#css的-三大属性：层叠性、继承性、优先级" class="headerlink" title="css的 三大属性：层叠性、继承性、优先级"></a>css的 三大属性：层叠性、继承性、优先级</h3><p>1.层叠性：</p>
+<p>（1）样式冲突，就近原则</p>
+<p>（2）样式不冲突，不会层叠</p>
+<p>2.继承性：子标签会继承父标签的某些样式（与文字相关的样式），以text-，font-，line-开头的元素可以继承，以及color）</p>
+<p>3.优先级：(权重问题)</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/04/AtBwJSCdhPHKas7.png" alt=""></p>
+<p>权重会叠加，但不会进位。</p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>1.组成：边框、外边距、内边距、内容</p>
+<p>2.边框border：border-width  || border-style  ||  border-color</p>
+<p>（1）border-width: 20px;  //粗细</p>
+<p>（2）border-style: solid; //dashed（虚线）、datted（点虚线）</p>
+<p>（3）border-color: red; //颜色</p>
+<p>简写：border: 1px solid red;  //可以不按顺序</p>
+<p>分开写：border-top: 1px solid red;</p>
+<p>注意：边框会增大盒子的大小</p>
+<p>border-collapse: collapse; //合并相邻的边框</p>
+<p>3.内边距padding：</p>
+<p>内边距会撑大盒子大，如果盒子没有指定宽度，padding不会撑大盒子宽度。</p>
+<p>4.外边距margin：控制盒子与盒子之间的距离</p>
+<p>（1)外边距可以让块级盒子水平居中，但必须满足两个条件：</p>
+<p>​     a.盒子必须有指定宽度  b.盒子左右外边距设置位auto</p>
+<p>（2）相邻块元素垂直外边距合并（两个相邻垂直的块元素都设置了外边距），取较大的值作为外边距。</p>
+<p>（3）嵌套块元素垂直外边距塌陷问题：</p>
+<p>​        对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距（如果儿子的上外边距比父亲的上外边距大，父亲就会以儿子的上外边距为准，向下移动；反则父亲还是以自己的上外边距准。不过不管怎样，儿子都是贴着父亲的左上角）</p>
+<p>​    解决方案：</p>
+<p>​                （1）为父元素定义上边框</p>
+<p>​                （2）为父元素定义上内边距</p>
+<p>​                （3）为父元素添加overflow: hidden;</p>
+<p>​                    其他方法：浮动、固定、绝对定位的盒子不会有塌陷问题。</p>
+<p>提醒：行内元素，尽量只设置左右外边距。</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: length;  //参数length可以是数值或百分比 (也可以分别写四个值)</p>
+<p>1.如果盒子为正方形，想要变成一个圆，把参数值改为高度一般，或写50%</p>
+<p>2。如果盒子为矩形，想要变成一个椭圆，把参数值改为50%</p>
+<p>3.如果盒子为矩形，想要变成一个输入框（横着的、数学上的），把参数值改为高度的一半。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>今日小结6</title>
     <url>/2020/08/03/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%936/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天复习css"><a href="#今天复习css" class="headerlink" title=" 今天复习css "></a><center> 今天复习css </center></h2><h3 id="字体属性font："><a href="#字体属性font：" class="headerlink" title="字体属性font："></a>字体属性font：</h3><p>1.font-family：定义字体系列</p>
@@ -1046,34 +1134,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结5</title>
-    <url>/2020/08/02/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%935/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="jQuery自动触发事件"><a href="#jQuery自动触发事件" class="headerlink" title="jQuery自动触发事件"></a>jQuery自动触发事件</h3><p>（1）element.click(); //自动触发点击事件，会触发元素默认行为</p>
-<p>（2）element.trigger(“type”);  //type是指事件，如click、mouseenter等，会触发元素默认行为</p>
-<p>（3）element.triggerHandler(“type”); //不会触发元素默认行为</p>
-<p>请看代码：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;title&gt;自动触发事件&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style&gt;</span></span><br><span class="line"><span class="regexp">        div &#123;</span></span><br><span class="line"><span class="regexp">            width: 100px;</span></span><br><span class="line"><span class="regexp">            height: 100px;</span></span><br><span class="line"><span class="regexp">            background-color: pink;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>style&gt;</span><br><span class="line">    &lt;script src=<span class="string">"jquery.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        $(function () &#123;</span></span><br><span class="line"><span class="regexp">            $("div").on("click", function () &#123;</span></span><br><span class="line"><span class="regexp">                alert(111);</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ (1)click()方法</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ $("div").click();/</span><span class="regexp">/会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/(2)trigger()方法</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/ $("div").trigger("click");/</span><span class="regexp">/会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/(3)triggerhandler()</span></span><br><span class="line"><span class="regexp">            $("div").triggerHandler("click");  /</span><span class="regexp">/不会触发元素默认行为</span></span><br><span class="line"><span class="regexp">            $("input").on("focus", function () &#123;</span></span><br><span class="line"><span class="regexp">                $(this).val("你好吗");</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            $("input").triggerHandler("focus"); /</span><span class="regexp">/不会出现光标在框框里面闪烁的默认行为</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&lt;/</span>div&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="jQuery阻止冒泡"><a href="#jQuery阻止冒泡" class="headerlink" title="jQuery阻止冒泡"></a>jQuery阻止冒泡</h3><p>阻止默认行为：event.preventDefault() 或者return false</p>
-<p>阻止冒泡：event.stopPropagation()</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;title&gt;事件对象&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="jquery.min.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: <span class="number">100</span>px;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        $(function () &#123;</span></span><br><span class="line"><span class="regexp">            $(document).on("click", function () &#123;</span></span><br><span class="line"><span class="regexp">                console.log("点击了document");</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">            $("div").on("click", function (event) &#123;</span></span><br><span class="line"><span class="regexp">                /</span><span class="regexp">/ console.log(event);</span></span><br><span class="line"><span class="regexp">                console.log("点击了div");</span></span><br><span class="line"><span class="regexp">                event.stopPropagation();/</span><span class="regexp">/阻止冒泡</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="jQuery对象拷贝"><a href="#jQuery对象拷贝" class="headerlink" title="jQuery对象拷贝"></a>jQuery对象拷贝</h3><p>$.extend([deep,] target, object, object1, [objectN]);</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/02/c7pS5xM1iGgLOd2.png" alt=""></p>
-<p>请看代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;jQuery对象拷贝&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;&#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj)（浅拷贝）</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     sex: &quot;m&quot;,</span><br><span class="line">            &#x2F;&#x2F;     id: 0</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj) &#x2F;&#x2F;（浅拷贝）相同的属性明会被覆盖原来的数据 如：id&#x3D;0被覆盖为id&#x3D;1</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; var targetObj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     sex: &quot;m&quot;,</span><br><span class="line">            &#x2F;&#x2F;     id: 0,</span><br><span class="line">            &#x2F;&#x2F;     msg: &#123;</span><br><span class="line">            &#x2F;&#x2F;         sex: &quot;男&quot;</span><br><span class="line">            &#x2F;&#x2F;     &#125;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; var obj &#x3D; &#123;</span><br><span class="line">            &#x2F;&#x2F;     id: 1,</span><br><span class="line">            &#x2F;&#x2F;     name: &quot;andy&quot;,</span><br><span class="line">            &#x2F;&#x2F;     msg: &#123;</span><br><span class="line">            &#x2F;&#x2F;         age: 18</span><br><span class="line">            &#x2F;&#x2F;     &#125;</span><br><span class="line">            &#x2F;&#x2F; &#125;;</span><br><span class="line">            &#x2F;&#x2F; $.extend(targetObj, obj)</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);&#x2F;&#x2F;（浅拷贝）返回msg：&#123;age: 18&#125;， 会覆盖sex：&quot;男&quot;</span><br><span class="line">            &#x2F;&#x2F; &#x2F;&#x2F;浅拷贝（把被拷贝对象复杂数据类型中的地址拷贝给目标对象），发生修改后，会影响被拷贝对像</span><br><span class="line">            &#x2F;&#x2F; targetObj.msg.age &#x3D; 20;</span><br><span class="line">            &#x2F;&#x2F; console.log(targetObj);</span><br><span class="line">            &#x2F;&#x2F; console.log(obj);</span><br><span class="line"></span><br><span class="line">            &#x2F;&#x2F;深拷贝，前面加true，完全克隆（拷贝的是对象，不是地址），修改目标对像不会影响被拷贝对象</span><br><span class="line">            var targetObj &#x3D; &#123;</span><br><span class="line">                sex: &quot;m&quot;,</span><br><span class="line">                id: 0,</span><br><span class="line">                msg: &#123;</span><br><span class="line">                    sex: &quot;男&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            var obj &#x3D; &#123;</span><br><span class="line">                id: 1,</span><br><span class="line">                name: &quot;andy&quot;,</span><br><span class="line">                msg: &#123;</span><br><span class="line">                    age: 18</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            &#x2F;&#x2F;深拷贝，前面加true，完全克隆（拷贝的是对象，不是地址），修改目标对像不会影响被拷贝对象</span><br><span class="line">            $.extend(true, targetObj, obj)</span><br><span class="line">            console.log(targetObj);&#x2F;&#x2F;浅拷贝）返回的msg：&#123;sex: &quot;男&quot;， age: 18&#125;，</span><br><span class="line">            targetObj.msg.age &#x3D; 20;</span><br><span class="line">            console.log(targetObj);</span><br><span class="line">            console.log(obj);</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="jQuery多库共存"><a href="#jQuery多库共存" class="headerlink" title="jQuery多库共存"></a>jQuery多库共存</h3><p>（1）把jquery的$符号写成jQuery</p>
-<p>（2）使用$.noConflict()，重新命名$。如var xx  =$.noConflict()  ///$可能需要写成jQuery</p>
-<p>请看代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;多库共存&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            function $(ele) &#123;</span><br><span class="line">                return document.querySelector(ele);</span><br><span class="line">            &#125;</span><br><span class="line">            console.log($(&quot;div&quot;));</span><br><span class="line">            console.log($(&quot;span&quot;));</span><br><span class="line">            console.log(jQuery(&quot;span&quot;));</span><br><span class="line">            &#x2F;&#x2F;1.如果$符号冲突，我们就使用 jQuery (jQuery是替换jquery中的$,而不是上面的函数名$)</span><br><span class="line">            &#x2F;&#x2F;遍历</span><br><span class="line">            &#x2F;&#x2F; $.each();&#x2F;&#x2F;$是jquery定义的，我们上面定义同名$()函数，不具有 $.each()，要改名 jQuery</span><br><span class="line">            jQuery.each();</span><br><span class="line">            &#x2F;&#x2F;2.让jquery释放对$的控制权， 让我们来决定 </span><br><span class="line">            var suibian &#x3D; jQuery.noConflict();</span><br><span class="line">            console.log(suibian(&quot;span&quot;));</span><br><span class="line">        &#125;) </span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;span&gt;&lt;&#x2F;span&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="推荐几个jQuery插件网站："><a href="#推荐几个jQuery插件网站：" class="headerlink" title="推荐几个jQuery插件网站："></a>推荐几个jQuery插件网站：</h3><p>（1）<a href="http://www.htmleaf.com/" target="_blank" rel="noopener">http://www.htmleaf.com/</a>   jQuery之家。。免费的喔</p>
-<p>（2）<a href="http://www.jq22.com/" target="_blank" rel="noopener">http://www.jq22.com/</a>  </p>
-<p>（3）<a href="https://v3.bootcss.com/" target="_blank" rel="noopener">https://v3.bootcss.com/</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>今日小结8</title>
     <url>/2020/08/05/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%938/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日还是css"><a href="#今日还是css" class="headerlink" title="今日还是css"></a><center>今日还是css</center></h2><h3 id="盒子、文字阴影"><a href="#盒子、文字阴影" class="headerlink" title="盒子、文字阴影"></a>盒子、文字阴影</h3><p>1.盒子阴影box-shadow: h-shadow v-shadow [blur] [spread] [color] [inset];</p>
@@ -1134,63 +1194,15 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结7</title>
-    <url>/2020/08/04/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%937/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天还是css"><a href="#今天还是css" class="headerlink" title="今天还是css"></a><center>今天还是css</center></h2><h3 id="HTML元素包括块元素、行内元素、行内块元素"><a href="#HTML元素包括块元素、行内元素、行内块元素" class="headerlink" title="HTML元素包括块元素、行内元素、行内块元素"></a>HTML元素包括块元素、行内元素、行内块元素</h3><p>1.块级元素特点：</p>
-<p>（1）独占一行</p>
-<p>（2）高度、宽度、外边距和内边距可以控制</p>
-<p>（3）宽度默认是父级元素宽度的100%</p>
-<p>（4）是一个容器，里面可以放行内或块元素</p>
-<p>注意：文字类的块元素内不能使用块元素；p、h1~h6等文字块元素内不能放其他块元素</p>
-<p>常见的块元素：p 、h1~h6、div、ul、ol、li等</p>
-<p>2.行内元素特点：</p>
-<p>（1）一行可以显示多个，中间有空隙</p>
-<p>（2）高度、宽度、直接设置无效</p>
-<p>（3）默认宽度为它本身内容宽度</p>
-<p>（4）行内元素只能收纳文本或行内元素</p>
-<p>注意：链接里面不能再放链接；链接里面可以放块元素，但给链接换一下块级模式更安全</p>
-<p>常见的行内元素：a、strong、b、em、i、del、s、ins、u、pan</p>
-<p>3.行内块元素特点：<br>（1）和相邻行内元素在同一行上，但它们之间会有空白缝隙</p>
-<p>（2）默认宽度是它本身内容的宽度</p>
-<p>（3）高度、宽度、外边框、内边框可以控制</p>
-<p>常见行内块元素：img、input、td</p>
-<h3 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h3><p>（1）转换为块元素：display: block;</p>
-<p>（2）转换为行内元素：display: inline;</p>
-<p>（3）转换为行内块元素：display: inline-block;</p>
-<h3 id="css的-三大属性：层叠性、继承性、优先级"><a href="#css的-三大属性：层叠性、继承性、优先级" class="headerlink" title="css的 三大属性：层叠性、继承性、优先级"></a>css的 三大属性：层叠性、继承性、优先级</h3><p>1.层叠性：</p>
-<p>（1）样式冲突，就近原则</p>
-<p>（2）样式不冲突，不会层叠</p>
-<p>2.继承性：子标签会继承父标签的某些样式（与文字相关的样式），以text-，font-，line-开头的元素可以继承，以及color）</p>
-<p>3.优先级：(权重问题)</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/04/AtBwJSCdhPHKas7.png" alt=""></p>
-<p>权重会叠加，但不会进位。</p>
-<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>1.组成：边框、外边距、内边距、内容</p>
-<p>2.边框border：border-width  || border-style  ||  border-color</p>
-<p>（1）border-width: 20px;  //粗细</p>
-<p>（2）border-style: solid; //dashed（虚线）、datted（点虚线）</p>
-<p>（3）border-color: red; //颜色</p>
-<p>简写：border: 1px solid red;  //可以不按顺序</p>
-<p>分开写：border-top: 1px solid red;</p>
-<p>注意：边框会增大盒子的大小</p>
-<p>border-collapse: collapse; //合并相邻的边框</p>
-<p>3.内边距padding：</p>
-<p>内边距会撑大盒子大，如果盒子没有指定宽度，padding不会撑大盒子宽度。</p>
-<p>4.外边距margin：控制盒子与盒子之间的距离</p>
-<p>（1)外边距可以让块级盒子水平居中，但必须满足两个条件：</p>
-<p>​     a.盒子必须有指定宽度  b.盒子左右外边距设置位auto</p>
-<p>（2）相邻块元素垂直外边距合并（两个相邻垂直的块元素都设置了外边距），取较大的值作为外边距。</p>
-<p>（3）嵌套块元素垂直外边距塌陷问题：</p>
-<p>​        对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距（如果儿子的上外边距比父亲的上外边距大，父亲就会以儿子的上外边距为准，向下移动；反则父亲还是以自己的上外边距准。不过不管怎样，儿子都是贴着父亲的左上角）</p>
-<p>​    解决方案：</p>
-<p>​                （1）为父元素定义上边框</p>
-<p>​                （2）为父元素定义上内边距</p>
-<p>​                （3）为父元素添加overflow: hidden;</p>
-<p>​                    其他方法：浮动、固定、绝对定位的盒子不会有塌陷问题。</p>
-<p>提醒：行内元素，尽量只设置左右外边距。</p>
-<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: length;  //参数length可以是数值或百分比 (也可以分别写四个值)</p>
-<p>1.如果盒子为正方形，想要变成一个圆，把参数值改为高度一般，或写50%</p>
-<p>2。如果盒子为矩形，想要变成一个椭圆，把参数值改为50%</p>
-<p>3.如果盒子为矩形，想要变成一个输入框（横着的、数学上的），把参数值改为高度的一半。</p>
+    <title>我的第一篇博客文章</title>
+    <url>/2020/06/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>第一部分：<br>内容</p>
+<hr>
+<p>第二部分：<br>内容</p>
+<hr>
+<p>第三部分：<br>结尾</p>
+<hr>
+<p><a href="http://www.dddd" target="_blank" rel="noopener">www.dddd</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -1257,18 +1269,6 @@
 <p>2.文字环绕效果可以利用浮动元素了巧妙运用</p>
 <p>3.行内块元素巧妙运用（只要给父级元素添加text-align: center; ，其子元素中的行内块元素或行内元素或文字都可以水平居中）</p>
 <p>4.css三角巧妙运用</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>我的第一篇博客文章</title>
-    <url>/2020/06/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>第一部分：<br>内容</p>
-<hr>
-<p>第二部分：<br>内容</p>
-<hr>
-<p>第三部分：<br>结尾</p>
-<hr>
-<p><a href="http://www.dddd" target="_blank" rel="noopener">www.dddd</a></p>
 ]]></content>
   </entry>
 </search>

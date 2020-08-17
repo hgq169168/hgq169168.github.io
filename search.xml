@@ -65,32 +65,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>js基础小总结2</title>
-    <url>/2020/07/29/js%E5%9F%BA%E7%A1%80%E5%B0%8F%E6%80%BB%E7%BB%932/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="1-string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面"><a href="#1-string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面" class="headerlink" title="1.string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面"></a>1.string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面</h3><h3 id="2-简单数据类型null，返回一个空的对象object"><a href="#2-简单数据类型null，返回一个空的对象object" class="headerlink" title="2.简单数据类型null，返回一个空的对象object"></a>2.简单数据类型null，返回一个空的对象object</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(ypeof(null)); &#x2F;&#x2F;object</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-Web-APIs"><a href="#3-Web-APIs" class="headerlink" title="3.Web APIs:"></a>3.Web APIs:</h3><p>(1)getElementById()  //通过id获取元素，返回元素对象</p>
-<p>(2)getElementByTagName() //通过标签名获取元素，返回伪数组</p>
-<p>(3)getElementByClassName() //通过类名获取元素，返回伪数组</p>
-<p>(4)querySelector()//通过选择器获取第一个元素，返回第一个元素对象</p>
-<p>(5)querySelector()//通过选择器获取所有元素，返回伪数组</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul class&#x3D;&quot;ul2&quot; id&#x3D;&quot;ul1&quot;&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var ul &#x3D; document.getElementById(&#39;ul1&#39;);</span><br><span class="line">        var ul1 &#x3D; document.getElementsByTagName(&#39;ul&#39;);</span><br><span class="line">        var ul2 &#x3D; document.getElementsByClassName(&#39;ul2&#39;);</span><br><span class="line">        var ul3 &#x3D; document.querySelector(&#39;.ul2&#39;) &#x2F;&#x2F;在类名前加 .</span><br><span class="line">        var ul4 &#x3D; document.querySelector(&#39;#ul1&#39;)&#x2F;&#x2F;在id前加 #</span><br><span class="line">        var ul5 &#x3D; document.querySelector(&#39;ul&#39;)&#x2F;&#x2F;标签名不添加</span><br><span class="line">        var ul6 &#x3D; document.querySelectorAll(&#39;ul&#39;)</span><br><span class="line">        console.log(ul, ul1, ul2, ul3, ul4, ul5, ul6);</span><br><span class="line">      &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
-
-<p>![](C:\Users\woduyou\Desktop\web APIs.png)</p>
-<h3 id="4-element-innerText和element-HTML的区别：（两者都是获取标签内容，并且可以对其赋值）"><a href="#4-element-innerText和element-HTML的区别：（两者都是获取标签内容，并且可以对其赋值）" class="headerlink" title="4.element.innerText和element.HTML的区别：（两者都是获取标签内容，并且可以对其赋值）"></a>4.element.innerText和element.HTML的区别：（两者都是获取标签内容，并且可以对其赋值）</h3><p>(1)element.HTML能识别HTML标签</p>
-<p>(2)element.HTML适合块元素（标签）</p>
-<p>(3)element.innerText适合行元素（标签）</p>
-<p>……剩下的以后补充</p>
-<h3 id="5-浅说js的方法："><a href="#5-浅说js的方法：" class="headerlink" title="5.浅说js的方法："></a>5.浅说js的方法：</h3><p>(1)setAttribute(‘属性’, 值)    //创建自定义属性</p>
-<p>(2)getAttribute(‘属性’) //获取自定义属性值，也可以获取自身属性值</p>
-<p>(3)elemet.属性  //获取自身属性值</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"ul2"</span>&gt;&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var ul = document.getElementById('ul1');</span></span><br><span class="line"><span class="regexp">		ul.setAttribute('id', 'ul2')</span></span><br><span class="line"><span class="regexp">		console.log(ul.getAttribute('id')); /</span><span class="regexp">/返回ul2</span></span><br><span class="line"><span class="regexp">	&lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="6-通过父子关系获得对应节点"><a href="#6-通过父子关系获得对应节点" class="headerlink" title="6.通过父子关系获得对应节点"></a>6.通过父子关系获得对应节点</h3><p>(1)node.parentNode //父级节点</p>
-<p>(2)node.childNodes //子级节点（会包含元素、文本）</p>
-]]></content>
-  </entry>
-  <entry>
     <title>今日小结1</title>
     <url>/2020/07/29/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%931/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="1-对jquery的理解："><a href="#1-对jquery的理解：" class="headerlink" title="1.对jquery的理解："></a>1.对jquery的理解：</h3><p>（1）jquery是对一些常用的原生js方法和属性的封装的一个数据库，$是JQuery的顶级对象（别称，一般用$来代替JQuery（注意大小写），如：</p>
@@ -129,56 +103,29 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结11</title>
-    <url>/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日是css3"><a href="#今日是css3" class="headerlink" title="今日是css3"></a><center>今日是css3</center></h2><h3 id="css3-动画animation"><a href="#css3-动画animation" class="headerlink" title="css3 动画animation"></a>css3 动画animation</h3><p>制定动画分为两步：1.先定义动画 2.再调用动画 3.持续时间</p>
-<p>1.用@keyframes定义动画（类似定义类选择器）</p>
-<p>@keyframes 动画名称 {</p>
-<p>​    0% {}    //也可以用from</p>
-<p>​    100%{}    //to</p>
-<p>}    //可以设置任意次数，0%、25%、50%、100%</p>
-<p>2、调用动画：</p>
-<p>animation-name: 动画名称;</p>
-<p>3.持续时间:</p>
-<p>animation-duration: 时间;</p>
-<p>动画常用属性：</p>
-<p>@keyframes：规定动画</p>
-<p>animation：所用动画简写。除了animation-play-state</p>
-<p>animation-name：规定@keyframes动画名称（必须的）</p>
-<p>animation-duration：完成动画的时间（秒或毫秒），默认0（必须的）</p>
-<p>animation-timing-function：曲线速度，默认“ease”</p>
-<p>animation-iteration-count：循环次数，默认1，无限循环infinite</p>
-<p>animation-direction：下一周期是否逆向播放，默认“normal”，“alternate”逆播放</p>
-<p>animation-fill-mode：结束后状态，保持“forwards”，回到起始位置“backwards”（默认）</p>
-<p>animation-play-state：是否正在行动或暂停，running（默认），“pause”暂停</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/AoVtWkTyfDUlQZG.png" alt=""></p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/BUZIG7E1wr2i6ys.png" alt=""></p>
-<p>动画简写：</p>
-<p>​    animation: 动画名称 持续时间 运动曲线 何时播放 播放次数 是否放向播放  起始或结束状态</p>
-<p>opacity: 1;  不透明度</p>
-<h3 id="3D转换："><a href="#3D转换：" class="headerlink" title="3D转换："></a>3D转换：</h3><p>3D位移：translate3d(x, y, z)</p>
-<p>透视：perspecitve</p>
-<p>3D 旋转：rotate3d(x, y, z)</p>
-<p>3D呈现：transform-style</p>
-<p>1.位移translate3的（x, y, z)中的x, y, z不可以省略, 如没有则写0（正负值都可以）。（z值越大，物体图像越大）</p>
-<p>2.透视perspective特点：</p>
-<p>​    （1）透视单位为像素（px），如：perspective: 400px;</p>
-<p>​    （2）视距越大，图像越小</p>
-<p>​    （3）透视是写再被观察元素的父（祖先也许）盒子上的</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/rYBjfLQuFbo6qJP.png" alt=""></p>
-<p>3.3D旋转rotate3d(x, y, z),可以正负值。</p>
-<p>​    transform: roate3d(1, 1, 0, 45deg);</p>
-<p>​    transform: rotateX(45deg);</p>
-<p>​    transform: rotateY(90deg);</p>
-<p>​    transform: rotateZ(45deg);</p>
-<p>4.3D呈现：transform-style: preserve-3d</p>
-<p>​    transform-style: flat; 不开启3d立体空间（默认）</p>
-<p>​    transform-style: preserve-3d; 开启3d立体空间</p>
-<p>​    注意：是给父级元素添加的，作用在子级元素上</p>
-<h3 id="私有前缀：为了兼容低版本浏览器"><a href="#私有前缀：为了兼容低版本浏览器" class="headerlink" title="私有前缀：为了兼容低版本浏览器"></a>私有前缀：为了兼容低版本浏览器</h3><p>1.-moz-：firfox浏览器私有属性</p>
-<p>2.-ms-：ie浏览器私有属性</p>
-<p>3.-webik-：safari、chrome浏览器私有属性</p>
-<p>4.-o-：opeara浏览器私有属性</p>
+    <title>js基础小总结2</title>
+    <url>/2020/07/29/js%E5%9F%BA%E7%A1%80%E5%B0%8F%E6%80%BB%E7%BB%932/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="1-string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面"><a href="#1-string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面" class="headerlink" title="1.string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面"></a>1.string、number、boolean、undefined、null等简单数据类型放在栈里面，而数组、对象、带有new的函数等复杂数据类型放在堆里面</h3><h3 id="2-简单数据类型null，返回一个空的对象object"><a href="#2-简单数据类型null，返回一个空的对象object" class="headerlink" title="2.简单数据类型null，返回一个空的对象object"></a>2.简单数据类型null，返回一个空的对象object</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(ypeof(null)); &#x2F;&#x2F;object</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Web-APIs"><a href="#3-Web-APIs" class="headerlink" title="3.Web APIs:"></a>3.Web APIs:</h3><p>(1)getElementById()  //通过id获取元素，返回元素对象</p>
+<p>(2)getElementByTagName() //通过标签名获取元素，返回伪数组</p>
+<p>(3)getElementByClassName() //通过类名获取元素，返回伪数组</p>
+<p>(4)querySelector()//通过选择器获取第一个元素，返回第一个元素对象</p>
+<p>(5)querySelector()//通过选择器获取所有元素，返回伪数组</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;ul class&#x3D;&quot;ul2&quot; id&#x3D;&quot;ul1&quot;&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">        &lt;li&gt;&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;&#x2F;ul&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var ul &#x3D; document.getElementById(&#39;ul1&#39;);</span><br><span class="line">        var ul1 &#x3D; document.getElementsByTagName(&#39;ul&#39;);</span><br><span class="line">        var ul2 &#x3D; document.getElementsByClassName(&#39;ul2&#39;);</span><br><span class="line">        var ul3 &#x3D; document.querySelector(&#39;.ul2&#39;) &#x2F;&#x2F;在类名前加 .</span><br><span class="line">        var ul4 &#x3D; document.querySelector(&#39;#ul1&#39;)&#x2F;&#x2F;在id前加 #</span><br><span class="line">        var ul5 &#x3D; document.querySelector(&#39;ul&#39;)&#x2F;&#x2F;标签名不添加</span><br><span class="line">        var ul6 &#x3D; document.querySelectorAll(&#39;ul&#39;)</span><br><span class="line">        console.log(ul, ul1, ul2, ul3, ul4, ul5, ul6);</span><br><span class="line">      &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>![](C:\Users\woduyou\Desktop\web APIs.png)</p>
+<h3 id="4-element-innerText和element-HTML的区别：（两者都是获取标签内容，并且可以对其赋值）"><a href="#4-element-innerText和element-HTML的区别：（两者都是获取标签内容，并且可以对其赋值）" class="headerlink" title="4.element.innerText和element.HTML的区别：（两者都是获取标签内容，并且可以对其赋值）"></a>4.element.innerText和element.HTML的区别：（两者都是获取标签内容，并且可以对其赋值）</h3><p>(1)element.HTML能识别HTML标签</p>
+<p>(2)element.HTML适合块元素（标签）</p>
+<p>(3)element.innerText适合行元素（标签）</p>
+<p>……剩下的以后补充</p>
+<h3 id="5-浅说js的方法："><a href="#5-浅说js的方法：" class="headerlink" title="5.浅说js的方法："></a>5.浅说js的方法：</h3><p>(1)setAttribute(‘属性’, 值)    //创建自定义属性</p>
+<p>(2)getAttribute(‘属性’) //获取自定义属性值，也可以获取自身属性值</p>
+<p>(3)elemet.属性  //获取自身属性值</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"ul2"</span>&gt;&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">	&lt;script&gt;</span></span><br><span class="line"><span class="regexp">        var ul = document.getElementById('ul1');</span></span><br><span class="line"><span class="regexp">		ul.setAttribute('id', 'ul2')</span></span><br><span class="line"><span class="regexp">		console.log(ul.getAttribute('id')); /</span><span class="regexp">/返回ul2</span></span><br><span class="line"><span class="regexp">	&lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-通过父子关系获得对应节点"><a href="#6-通过父子关系获得对应节点" class="headerlink" title="6.通过父子关系获得对应节点"></a>6.通过父子关系获得对应节点</h3><p>(1)node.parentNode //父级节点</p>
+<p>(2)node.childNodes //子级节点（会包含元素、文本）</p>
 ]]></content>
   </entry>
   <entry>
@@ -278,6 +225,59 @@
 <p>​    transform: translate() rotate() scale();   //顺序不要便</p>
 <p>提示：当我们同时有移动和其他属性的操作时，先把移动放大最前面</p>
 <p>​    </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>今日小结11</title>
+    <url>/2020/08/08/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9311/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日是css3"><a href="#今日是css3" class="headerlink" title="今日是css3"></a><center>今日是css3</center></h2><h3 id="css3-动画animation"><a href="#css3-动画animation" class="headerlink" title="css3 动画animation"></a>css3 动画animation</h3><p>制定动画分为两步：1.先定义动画 2.再调用动画 3.持续时间</p>
+<p>1.用@keyframes定义动画（类似定义类选择器）</p>
+<p>@keyframes 动画名称 {</p>
+<p>​    0% {}    //也可以用from</p>
+<p>​    100%{}    //to</p>
+<p>}    //可以设置任意次数，0%、25%、50%、100%</p>
+<p>2、调用动画：</p>
+<p>animation-name: 动画名称;</p>
+<p>3.持续时间:</p>
+<p>animation-duration: 时间;</p>
+<p>动画常用属性：</p>
+<p>@keyframes：规定动画</p>
+<p>animation：所用动画简写。除了animation-play-state</p>
+<p>animation-name：规定@keyframes动画名称（必须的）</p>
+<p>animation-duration：完成动画的时间（秒或毫秒），默认0（必须的）</p>
+<p>animation-timing-function：曲线速度，默认“ease”</p>
+<p>animation-iteration-count：循环次数，默认1，无限循环infinite</p>
+<p>animation-direction：下一周期是否逆向播放，默认“normal”，“alternate”逆播放</p>
+<p>animation-fill-mode：结束后状态，保持“forwards”，回到起始位置“backwards”（默认）</p>
+<p>animation-play-state：是否正在行动或暂停，running（默认），“pause”暂停</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/AoVtWkTyfDUlQZG.png" alt=""></p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/BUZIG7E1wr2i6ys.png" alt=""></p>
+<p>动画简写：</p>
+<p>​    animation: 动画名称 持续时间 运动曲线 何时播放 播放次数 是否放向播放  起始或结束状态</p>
+<p>opacity: 1;  不透明度</p>
+<h3 id="3D转换："><a href="#3D转换：" class="headerlink" title="3D转换："></a>3D转换：</h3><p>3D位移：translate3d(x, y, z)</p>
+<p>透视：perspecitve</p>
+<p>3D 旋转：rotate3d(x, y, z)</p>
+<p>3D呈现：transform-style</p>
+<p>1.位移translate3的（x, y, z)中的x, y, z不可以省略, 如没有则写0（正负值都可以）。（z值越大，物体图像越大）</p>
+<p>2.透视perspective特点：</p>
+<p>​    （1）透视单位为像素（px），如：perspective: 400px;</p>
+<p>​    （2）视距越大，图像越小</p>
+<p>​    （3）透视是写再被观察元素的父（祖先也许）盒子上的</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/08/rYBjfLQuFbo6qJP.png" alt=""></p>
+<p>3.3D旋转rotate3d(x, y, z),可以正负值。</p>
+<p>​    transform: roate3d(1, 1, 0, 45deg);</p>
+<p>​    transform: rotateX(45deg);</p>
+<p>​    transform: rotateY(90deg);</p>
+<p>​    transform: rotateZ(45deg);</p>
+<p>4.3D呈现：transform-style: preserve-3d</p>
+<p>​    transform-style: flat; 不开启3d立体空间（默认）</p>
+<p>​    transform-style: preserve-3d; 开启3d立体空间</p>
+<p>​    注意：是给父级元素添加的，作用在子级元素上</p>
+<h3 id="私有前缀：为了兼容低版本浏览器"><a href="#私有前缀：为了兼容低版本浏览器" class="headerlink" title="私有前缀：为了兼容低版本浏览器"></a>私有前缀：为了兼容低版本浏览器</h3><p>1.-moz-：firfox浏览器私有属性</p>
+<p>2.-ms-：ie浏览器私有属性</p>
+<p>3.-webik-：safari、chrome浏览器私有属性</p>
+<p>4.-o-：opeara浏览器私有属性</p>
 ]]></content>
   </entry>
   <entry>
@@ -1002,66 +1002,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>今日小结7</title>
-    <url>/2020/08/04/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%937/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天还是css"><a href="#今天还是css" class="headerlink" title="今天还是css"></a><center>今天还是css</center></h2><h3 id="HTML元素包括块元素、行内元素、行内块元素"><a href="#HTML元素包括块元素、行内元素、行内块元素" class="headerlink" title="HTML元素包括块元素、行内元素、行内块元素"></a>HTML元素包括块元素、行内元素、行内块元素</h3><p>1.块级元素特点：</p>
-<p>（1）独占一行</p>
-<p>（2）高度、宽度、外边距和内边距可以控制</p>
-<p>（3）宽度默认是父级元素宽度的100%</p>
-<p>（4）是一个容器，里面可以放行内或块元素</p>
-<p>注意：文字类的块元素内不能使用块元素；p、h1~h6等文字块元素内不能放其他块元素</p>
-<p>常见的块元素：p 、h1~h6、div、ul、ol、li等</p>
-<p>2.行内元素特点：</p>
-<p>（1）一行可以显示多个，中间有空隙</p>
-<p>（2）高度、宽度、直接设置无效</p>
-<p>（3）默认宽度为它本身内容宽度</p>
-<p>（4）行内元素只能收纳文本或行内元素</p>
-<p>注意：链接里面不能再放链接；链接里面可以放块元素，但给链接换一下块级模式更安全</p>
-<p>常见的行内元素：a、strong、b、em、i、del、s、ins、u、pan</p>
-<p>3.行内块元素特点：<br>（1）和相邻行内元素在同一行上，但它们之间会有空白缝隙</p>
-<p>（2）默认宽度是它本身内容的宽度</p>
-<p>（3）高度、宽度、外边框、内边框可以控制</p>
-<p>常见行内块元素：img、input、td</p>
-<h3 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h3><p>（1）转换为块元素：display: block;</p>
-<p>（2）转换为行内元素：display: inline;</p>
-<p>（3）转换为行内块元素：display: inline-block;</p>
-<h3 id="css的-三大属性：层叠性、继承性、优先级"><a href="#css的-三大属性：层叠性、继承性、优先级" class="headerlink" title="css的 三大属性：层叠性、继承性、优先级"></a>css的 三大属性：层叠性、继承性、优先级</h3><p>1.层叠性：</p>
-<p>（1）样式冲突，就近原则</p>
-<p>（2）样式不冲突，不会层叠</p>
-<p>2.继承性：子标签会继承父标签的某些样式（与文字相关的样式），以text-，font-，line-开头的元素可以继承，以及color）</p>
-<p>3.优先级：(权重问题)</p>
-<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/04/AtBwJSCdhPHKas7.png" alt=""></p>
-<p>权重会叠加，但不会进位。</p>
-<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>1.组成：边框、外边距、内边距、内容</p>
-<p>2.边框border：border-width  || border-style  ||  border-color</p>
-<p>（1）border-width: 20px;  //粗细</p>
-<p>（2）border-style: solid; //dashed（虚线）、datted（点虚线）</p>
-<p>（3）border-color: red; //颜色</p>
-<p>简写：border: 1px solid red;  //可以不按顺序</p>
-<p>分开写：border-top: 1px solid red;</p>
-<p>注意：边框会增大盒子的大小</p>
-<p>border-collapse: collapse; //合并相邻的边框</p>
-<p>3.内边距padding：</p>
-<p>内边距会撑大盒子大，如果盒子没有指定宽度，padding不会撑大盒子宽度。</p>
-<p>4.外边距margin：控制盒子与盒子之间的距离</p>
-<p>（1)外边距可以让块级盒子水平居中，但必须满足两个条件：</p>
-<p>​     a.盒子必须有指定宽度  b.盒子左右外边距设置位auto</p>
-<p>（2）相邻块元素垂直外边距合并（两个相邻垂直的块元素都设置了外边距），取较大的值作为外边距。</p>
-<p>（3）嵌套块元素垂直外边距塌陷问题：</p>
-<p>​        对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距（如果儿子的上外边距比父亲的上外边距大，父亲就会以儿子的上外边距为准，向下移动；反则父亲还是以自己的上外边距准。不过不管怎样，儿子都是贴着父亲的左上角）</p>
-<p>​    解决方案：</p>
-<p>​                （1）为父元素定义上边框</p>
-<p>​                （2）为父元素定义上内边距</p>
-<p>​                （3）为父元素添加overflow: hidden;</p>
-<p>​                    其他方法：浮动、固定、绝对定位的盒子不会有塌陷问题。</p>
-<p>提醒：行内元素，尽量只设置左右外边距。</p>
-<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: length;  //参数length可以是数值或百分比 (也可以分别写四个值)</p>
-<p>1.如果盒子为正方形，想要变成一个圆，把参数值改为高度一般，或写50%</p>
-<p>2。如果盒子为矩形，想要变成一个椭圆，把参数值改为50%</p>
-<p>3.如果盒子为矩形，想要变成一个输入框（横着的、数学上的），把参数值改为高度的一半。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>今日小结6</title>
     <url>/2020/08/03/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%936/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天复习css"><a href="#今天复习css" class="headerlink" title=" 今天复习css "></a><center> 今天复习css </center></h2><h3 id="字体属性font："><a href="#字体属性font：" class="headerlink" title="字体属性font："></a>字体属性font：</h3><p>1.font-family：定义字体系列</p>
@@ -1134,6 +1074,66 @@
 ]]></content>
   </entry>
   <entry>
+    <title>今日小结7</title>
+    <url>/2020/08/04/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%937/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今天还是css"><a href="#今天还是css" class="headerlink" title="今天还是css"></a><center>今天还是css</center></h2><h3 id="HTML元素包括块元素、行内元素、行内块元素"><a href="#HTML元素包括块元素、行内元素、行内块元素" class="headerlink" title="HTML元素包括块元素、行内元素、行内块元素"></a>HTML元素包括块元素、行内元素、行内块元素</h3><p>1.块级元素特点：</p>
+<p>（1）独占一行</p>
+<p>（2）高度、宽度、外边距和内边距可以控制</p>
+<p>（3）宽度默认是父级元素宽度的100%</p>
+<p>（4）是一个容器，里面可以放行内或块元素</p>
+<p>注意：文字类的块元素内不能使用块元素；p、h1~h6等文字块元素内不能放其他块元素</p>
+<p>常见的块元素：p 、h1~h6、div、ul、ol、li等</p>
+<p>2.行内元素特点：</p>
+<p>（1）一行可以显示多个，中间有空隙</p>
+<p>（2）高度、宽度、直接设置无效</p>
+<p>（3）默认宽度为它本身内容宽度</p>
+<p>（4）行内元素只能收纳文本或行内元素</p>
+<p>注意：链接里面不能再放链接；链接里面可以放块元素，但给链接换一下块级模式更安全</p>
+<p>常见的行内元素：a、strong、b、em、i、del、s、ins、u、pan</p>
+<p>3.行内块元素特点：<br>（1）和相邻行内元素在同一行上，但它们之间会有空白缝隙</p>
+<p>（2）默认宽度是它本身内容的宽度</p>
+<p>（3）高度、宽度、外边框、内边框可以控制</p>
+<p>常见行内块元素：img、input、td</p>
+<h3 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h3><p>（1）转换为块元素：display: block;</p>
+<p>（2）转换为行内元素：display: inline;</p>
+<p>（3）转换为行内块元素：display: inline-block;</p>
+<h3 id="css的-三大属性：层叠性、继承性、优先级"><a href="#css的-三大属性：层叠性、继承性、优先级" class="headerlink" title="css的 三大属性：层叠性、继承性、优先级"></a>css的 三大属性：层叠性、继承性、优先级</h3><p>1.层叠性：</p>
+<p>（1）样式冲突，就近原则</p>
+<p>（2）样式不冲突，不会层叠</p>
+<p>2.继承性：子标签会继承父标签的某些样式（与文字相关的样式），以text-，font-，line-开头的元素可以继承，以及color）</p>
+<p>3.优先级：(权重问题)</p>
+<p><img src= "/img/loading.gif" data-src="https://i.loli.net/2020/08/04/AtBwJSCdhPHKas7.png" alt=""></p>
+<p>权重会叠加，但不会进位。</p>
+<h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>1.组成：边框、外边距、内边距、内容</p>
+<p>2.边框border：border-width  || border-style  ||  border-color</p>
+<p>（1）border-width: 20px;  //粗细</p>
+<p>（2）border-style: solid; //dashed（虚线）、datted（点虚线）</p>
+<p>（3）border-color: red; //颜色</p>
+<p>简写：border: 1px solid red;  //可以不按顺序</p>
+<p>分开写：border-top: 1px solid red;</p>
+<p>注意：边框会增大盒子的大小</p>
+<p>border-collapse: collapse; //合并相邻的边框</p>
+<p>3.内边距padding：</p>
+<p>内边距会撑大盒子大，如果盒子没有指定宽度，padding不会撑大盒子宽度。</p>
+<p>4.外边距margin：控制盒子与盒子之间的距离</p>
+<p>（1)外边距可以让块级盒子水平居中，但必须满足两个条件：</p>
+<p>​     a.盒子必须有指定宽度  b.盒子左右外边距设置位auto</p>
+<p>（2）相邻块元素垂直外边距合并（两个相邻垂直的块元素都设置了外边距），取较大的值作为外边距。</p>
+<p>（3）嵌套块元素垂直外边距塌陷问题：</p>
+<p>​        对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距（如果儿子的上外边距比父亲的上外边距大，父亲就会以儿子的上外边距为准，向下移动；反则父亲还是以自己的上外边距准。不过不管怎样，儿子都是贴着父亲的左上角）</p>
+<p>​    解决方案：</p>
+<p>​                （1）为父元素定义上边框</p>
+<p>​                （2）为父元素定义上内边距</p>
+<p>​                （3）为父元素添加overflow: hidden;</p>
+<p>​                    其他方法：浮动、固定、绝对定位的盒子不会有塌陷问题。</p>
+<p>提醒：行内元素，尽量只设置左右外边距。</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: length;  //参数length可以是数值或百分比 (也可以分别写四个值)</p>
+<p>1.如果盒子为正方形，想要变成一个圆，把参数值改为高度一般，或写50%</p>
+<p>2。如果盒子为矩形，想要变成一个椭圆，把参数值改为50%</p>
+<p>3.如果盒子为矩形，想要变成一个输入框（横着的、数学上的），把参数值改为高度的一半。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>今日小结8</title>
     <url>/2020/08/05/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%938/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="今日还是css"><a href="#今日还是css" class="headerlink" title="今日还是css"></a><center>今日还是css</center></h2><h3 id="盒子、文字阴影"><a href="#盒子、文字阴影" class="headerlink" title="盒子、文字阴影"></a>盒子、文字阴影</h3><p>1.盒子阴影box-shadow: h-shadow v-shadow [blur] [spread] [color] [inset];</p>
@@ -1191,18 +1191,6 @@
 <p>（2）块元素添加绝对定位或固定定位，如果不给定宽度和高度，默认大小是其内容大小</p>
 <p>3.脱标的盒子不会触发外边距塌陷（嵌套）</p>
 <p>4.绝对定位：固定定位元素会完全压住下面标准流的所有内容；浮动元素只会压住下面标准流的盒子，不会压住标准流盒子里面的文字、图片等。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>我的第一篇博客文章</title>
-    <url>/2020/06/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>第一部分：<br>内容</p>
-<hr>
-<p>第二部分：<br>内容</p>
-<hr>
-<p>第三部分：<br>结尾</p>
-<hr>
-<p><a href="http://www.dddd" target="_blank" rel="noopener">www.dddd</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -1269,6 +1257,18 @@
 <p>2.文字环绕效果可以利用浮动元素了巧妙运用</p>
 <p>3.行内块元素巧妙运用（只要给父级元素添加text-align: center; ，其子元素中的行内块元素或行内元素或文字都可以水平居中）</p>
 <p>4.css三角巧妙运用</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的第一篇博客文章</title>
+    <url>/2020/06/19/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>第一部分：<br>内容</p>
+<hr>
+<p>第二部分：<br>内容</p>
+<hr>
+<p>第三部分：<br>结尾</p>
+<hr>
+<p><a href="http://www.dddd" target="_blank" rel="noopener">www.dddd</a></p>
 ]]></content>
   </entry>
 </search>

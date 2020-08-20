@@ -1518,4 +1518,81 @@
 <p>（2）interval是定时器的名字（标识符）</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>今日小结23</title>
+    <url>/2020/08/20/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9323/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><p>##<center>今日依旧是Web APIs（好吧，其实今天没怎么复习）</center></p>
+<h3 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a>this指向问题</h3><p>1.全局作用域、普通函数或定时器里的this指向的全局对象window</p>
+<p>2.方法调用中谁调用this就指向谁</p>
+<p>3.事件函数中，谁是触发对象，this就指向谁</p>
+<p>4.构造函数中this指向构造函数的实例（给谁赋值了）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv&#x3D;&quot;X-UA-Compatible&quot; content&#x3D;&quot;ie&#x3D;edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        &#x2F;&#x2F; this 指向问题 一般情况下this的最终指向的是那个调用它的对象</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 1. 全局作用域或者普通函数中this指向全局对象window（ 注意定时器里面的this指向window）</span><br><span class="line">        console.log(this);</span><br><span class="line"></span><br><span class="line">        function fn() &#123;</span><br><span class="line">            console.log(this);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        window.fn();</span><br><span class="line">        window.setTimeout(function () &#123;</span><br><span class="line">            console.log(this);</span><br><span class="line"></span><br><span class="line">        &#125;, 1000);</span><br><span class="line">        &#x2F;&#x2F; 2. 方法调用中谁调用this指向谁</span><br><span class="line">        var o &#x3D; &#123;</span><br><span class="line">            sayHi: function () &#123;</span><br><span class="line">                console.log(this); &#x2F;&#x2F; this指向的是 o 这个对象</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        o.sayHi();</span><br><span class="line">        var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line">        &#x2F;&#x2F; btn.onclick &#x3D; function() &#123;</span><br><span class="line">        &#x2F;&#x2F;     console.log(this); &#x2F;&#x2F; this指向的是btn这个按钮对象</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; &#125;</span><br><span class="line">        btn.addEventListener(&#39;click&#39;, function () &#123;</span><br><span class="line">            console.log(this); &#x2F;&#x2F; this指向的是btn这个按钮对象</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">        btn.onclick &#x3D; function () &#123;</span><br><span class="line">            console.log(this); &#x2F;&#x2F;this指向的是btn这个按钮对象</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; 3. 构造函数中this指向构造函数的实例</span><br><span class="line">        function Fun() &#123;</span><br><span class="line">            console.log(this); &#x2F;&#x2F; this 指向的是fun 实例对象</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        var fun &#x3D; new Fun();</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="JS执行机制：分同步任务和异步任务"><a href="#JS执行机制：分同步任务和异步任务" class="headerlink" title="JS执行机制：分同步任务和异步任务"></a>JS执行机制：分同步任务和异步任务</h3><p>1.同步任务：都在主线程上执行，形成一个执行栈</p>
+<p>2.异步任务：是通过回调函数实现的，回调函数被放在任务队列中（消息队列）</p>
+<p>异步任务的三种类型：</p>
+<p>（1）普通事件，如click、resize等</p>
+<p>（2）资源加载，如load、error等</p>
+<p>（3）定时器，如setInterval、setTimeout</p>
+<p>3.执行机制：<br>（1）先执行执行栈的同步任务</p>
+<p>（2）异步任务（回调函数），先放到一部进程里面，通过异步进程处理来判断异步任务是否要放入任务队列，满足条件就放进任务队列中。</p>
+<p>（3）执行栈中的所有同步任务执行完毕后，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待时间，进入执行栈，开始执行。（其中会有一个事件循环机制来反复查看任务队列的情况）</p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>1.URL：统一资源定位符，是互联网上标准资源的地址（唯一的）</p>
+<p>URL语法格式：</p>
+<p>protocol://host[:port]/path/[?query]#fragment</p>
+<p>（1）protocol：通信协议，如http、ffp、maito等</p>
+<p>（2）主机（域名）</p>
+<p>（3）port：端口号，可省略，如http默认端口号为80</p>
+<p>（4）path：路径</p>
+<p>（5）query：参数，以键值对的形式，通过&amp;符号隔开</p>
+<p>（6）fragment：片段，#后面内容常见域链接、锚点等</p>
+<p>2.location对象：是window提供的一个属性，用于获取或设置URL，并且可以解析URL，该参数返回的是一个对象</p>
+<p>3.location对象属性：<br>（1）location.href：获取或设置整个URL</p>
+<p>（2）location.host：返回主机（域名）<br>（3）location.port：返回端口，如果未写，返回空字符串</p>
+<p>（4）location.pathname：返回路径</p>
+<p>（5）location.search：返回参数</p>
+<p>（6）location.hash：返回片段</p>
+<p>（7）location.assign()：跟href一样，可以跳转页面</p>
+<p>（8）location.replace()：替换当前页面，因为不记录历史，所以不能后退</p>
+<p>（9）location.reload()：重新加载页面，相当于刷新（F5键），参数写true表示强制刷新（ctrl+F5）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;location常用方法&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button&gt;点击&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line">        btn.addEventListener(&#39;click&#39;, function () &#123;</span><br><span class="line">            &#x2F;&#x2F;assign(&#39;url&#39;)跳转页面  记录浏览历史，所以可以实现后退功能</span><br><span class="line">            &#x2F;&#x2F; location.assign(&#39;http:&#x2F;&#x2F;www.itcast.cn&#39;);</span><br><span class="line">            &#x2F;&#x2F;replace(&#39;url&#39;)替换当前页面  不记录浏览历史，所以不可以实现后退功能</span><br><span class="line">            location.replace(&#39;http:&#x2F;&#x2F;www.itcast.cn&#39;);</span><br><span class="line">            &#x2F;&#x2F;reload()重新加载(f5) 括号里面加true 表示强制加载（ctrl + f5)</span><br><span class="line">            &#x2F;&#x2F; location.reload();</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>1.navigator的属性</p>
+<p>（1）userAgent：返回由客户机发生服务器的user-agent的头部值</p>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>方法：</p>
+<p>1.back()：后退功能</p>
+<p>2.forward()：前进功能</p>
+<p>3.go(参数)：前进或后退功能，参数为1，前进1个页面；参数为-1，后退1个页面</p>
+<h3 id="元素偏移量offset系列"><a href="#元素偏移量offset系列" class="headerlink" title="元素偏移量offset系列"></a>元素偏移量offset系列</h3><p>1.常用属性：<br>（1）element.offsetParent：返回作为该元素带有定位的父级（祖先）元素，如果父级都没有定位，返回body</p>
+<p>（2）element.offsetTop：返回元素相对于带有定位父元素的上方偏移量，不带单位</p>
+<p>（3）element.offsetLeft：返回元素相对于带有定位父元素的左侧偏移量，不带单位</p>
+<p>（4）element.offsetWidth：返回自身包括padding、边框和内容区的宽度，不带单位</p>
+<p>（5）element.offsetHeight：返回自身包括padding、边框和内容区的高度，不带单位</p>
+<p>2.offset与style的区别：</p>
+<p>ofset中：</p>
+<p>（1）可以得到任意样式表中的样式值</p>
+<p>（2）获得的数值不带单位的数字</p>
+<p>（3）offsetWidth包含pading+border+width</p>
+<p>（4）offsetWidth等属性是只读属性，不能赋值</p>
+<p>style中：</p>
+<p>（1）只能获取行内样式表中的样式值</p>
+<p>（2）获得的是带单位的字符串</p>
+<p>（3）style.width获得的只包含width</p>
+<p>（4）style.width等属性不仅是可读属性，而且可以赋值</p>
+<h3 id="元素可视区client系列"><a href="#元素可视区client系列" class="headerlink" title="元素可视区client系列"></a>元素可视区client系列</h3><p>1.常用属性：<br>（1）element.clientTop：返回元素上边框大小，不带单位</p>
+<p>（2）element.clientLeft：返回元素左边框大小，不带单位</p>
+<p>（3）element.clientWidth：返回自身包括padding、width，不包含边框的宽度，不带单位</p>
+<p>（4）element.clientHeight：返回自身包括padding、height，不包含边框高度，不带单位</p>
+<h3 id="元素滚动scroll系列"><a href="#元素滚动scroll系列" class="headerlink" title="元素滚动scroll系列"></a>元素滚动scroll系列</h3><p>1.scroll系列属性</p>
+<p>（1）element.scrollTop：返回被卷去的上侧距离，不带单位</p>
+<p>（2）element.scrollLeft：返回被卷去的左侧距离，不带单位</p>
+<p>（3）element.scrollWidth：返回自身实际的内容宽度（如果内容超出盒子范围，以内容准；否则，以盒子宽度为准），不带单位</p>
+<p>（4）element.scrollHeight：返回自身实际的内容宽度（如果内容超出盒子范围，以内容准；否则，以盒子宽度为准），不带单位</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;scroll系列&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        div &#123;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            border: 10px solid red;</span><br><span class="line">            padding: 10px;</span><br><span class="line">            overflow: auto;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容</span><br><span class="line">        我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        &#x2F;&#x2F;scroll返回的值都不带单位</span><br><span class="line">        var div &#x3D; document.querySelector(&#39;div&#39;);</span><br><span class="line">        console.log(div.scrollHeight); &#x2F;&#x2F;返回盒子的真实高度 如果盒子了的内容超过盒子的高度 则是返回内容的实际高度 否证 返回盒子高度和padding</span><br><span class="line">        console.log(div.clientHeight);&#x2F;&#x2F;返回盒子高度和padding</span><br><span class="line">        &#x2F;&#x2F;scroll滚动事件 当我们滚动条发生变化会触发的事件</span><br><span class="line">        div.addEventListener(&#39;scroll&#39;, function () &#123;</span><br><span class="line">            console.log(div.scrollTop);&#x2F;&#x2F;返回被卷取的上侧距离</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.window.pageYoffset可以获得页面被卷去的头部，同理window.pageXoffset得到被卷去的左侧</p>
+]]></content>
+  </entry>
 </search>

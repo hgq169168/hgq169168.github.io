@@ -1926,7 +1926,7 @@
 
 
 
-<p>2.父组件（不用时组件，使用子组件，然后赋值就行）通过属性值传递给子组件</p>
+<p>2.父组件（不用是组件，使用子组件，然后赋值就行）通过属性值传递给子组件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;menu-item titles&#x3D;&quot;来自父组件的值&quot;&gt;&lt;&#x2F;menu-item&gt;</span><br><span class="line">&lt;menu-item :titles&#x3D;&quot;ptitles&quot; content&#x3D;&quot;hello&quot;&gt;&lt;&#x2F;menu-item&gt;</span><br></pre></td></tr></table></figure>
 
 
@@ -1978,6 +1978,6 @@
 
 
 
-]]></content>
+<h3 id="你好-哈哈哈哈"><a href="#你好-哈哈哈哈" class="headerlink" title="你好 哈哈哈哈"></a>你好 哈哈哈哈</h3>]]></content>
   </entry>
 </search>

@@ -1980,4 +1980,85 @@
 
 <h3 id="你好-哈哈哈哈"><a href="#你好-哈哈哈哈" class="headerlink" title="你好 哈哈哈哈"></a>你好 哈哈哈哈</h3>]]></content>
   </entry>
+  <entry>
+    <title>今日小结28</title>
+    <url>/2020/09/21/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9328/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h2 id="SVG：可缩放矢量图形（Scalable-Vector-Graphics）"><a href="#SVG：可缩放矢量图形（Scalable-Vector-Graphics）" class="headerlink" title="SVG：可缩放矢量图形（Scalable Vector Graphics）"></a>SVG：可缩放矢量图形（Scalable Vector Graphics）</h2><h3 id="svg简介："><a href="#svg简介：" class="headerlink" title="svg简介："></a>svg简介：</h3><p>1.定义用于网络的基于矢量的图像</p>
+<p>2.使用XML格式定义图型</p>
+<p>3.图像在放大或改变尺寸的情况下，其图型质量不会有损失</p>
+<p>4.以.svg为后缀的名称</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE svg PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD SVG 1.1&#x2F;&#x2F;EN&quot; </span><br><span class="line">&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;Graphics&#x2F;SVG&#x2F;1.1&#x2F;DTD&#x2F;svg11.dtd&quot;&gt;</span><br><span class="line">&lt;!-- xmlns是svg的命名空间 --&gt;</span><br><span class="line">&lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot;</span><br><span class="line">xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;circle cx&#x3D;&quot;100&quot; cy&#x3D;&quot;50&quot; r&#x3D;&quot;40&quot; stroke&#x3D;&quot;black&quot;</span><br><span class="line">stroke-width&#x3D;&quot;2&quot; fill&#x3D;&quot;red&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>代码解析：</p>
+<p>（1）第一行包含了 XML 声明。请注意 standalone 属性！该属性规定此 SVG 文件是否是“独立的”，或含有对外部文件的引用。standalone=”no” 意味着 SVG 文档会引用一个外部文件 - 在这里，是 DTD 文件。</p>
+<p>（2）第二和第三行引用了这个外部的 SVG DTD。该 DTD 位于 “<a href="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd”。该" target="_blank" rel="noopener">http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd”。该</a> DTD 位于 W3C，含有所有允许的 SVG 元素。</p>
+<p>（3）SVG 代码以<code>&lt;svg&gt;</code>元素开始，包括开启标签 &lt;svg 和关闭标签 <code>&lt;/svg&gt;</code>。这是根元素。width 和 height 属性可设置此 SVG 文档的宽度和高度。version 属性可定义所使用的 SVG 版本，xmlns 属性可定义 SVG 命名空间</p>
+<h3 id="SVG-文件可通过以下标签嵌入-HTML-文档：-lt-embed-gt-、-lt-object-gt-或者-lt-iframe-gt-。"><a href="#SVG-文件可通过以下标签嵌入-HTML-文档：-lt-embed-gt-、-lt-object-gt-或者-lt-iframe-gt-。" class="headerlink" title="SVG 文件可通过以下标签嵌入 HTML 文档：&lt;embed&gt;、&lt;object&gt; 或者&lt;iframe&gt;。"></a>SVG 文件可通过以下标签嵌入 HTML 文档：<code>&lt;embed&gt;</code>、<code>&lt;object&gt;</code> 或者<code>&lt;iframe&gt;</code>。</h3><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- 通过标签&lt;embed&gt; --&gt;</span><br><span class="line">    &lt;!-- &lt;embed src&#x3D;&quot;rect.svg&quot; width&#x3D;&quot;300&quot; height&#x3D;&quot;100&quot; type&#x3D;&quot;image&#x2F;svg+xml&quot;</span><br><span class="line">        pluginspage&#x3D;&quot;http:&#x2F;&#x2F;www.adobe.com&#x2F;svg&#x2F;viewer&#x2F;install&#x2F;&quot; &#x2F;&gt; --&gt;</span><br><span class="line">    &lt;embed src&#x3D;&quot;.&#x2F;01-例子.svg&quot; width&#x3D;&quot;300&quot; height&#x3D;&quot;100&quot; type&#x3D;&quot;image&#x2F;svg+xml&quot; pluginspage&#x3D;&quot;&quot; &#x2F;&gt;</span><br><span class="line">    &lt;div&gt;-----------------------------------------------------&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div&gt;-----------------------------------------------------&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 通过标签&lt;iframe&gt; --&gt;</span><br><span class="line">    &lt;iframe src&#x3D;&quot;.&#x2F;01-例子.svg&quot; width&#x3D;&quot;300&quot; height&#x3D;&quot;100&quot;&gt;</span><br><span class="line">    &lt;&#x2F;iframe&gt;</span><br><span class="line">    &lt;div&gt;-----------------------------------------------------&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;!-- 通过标签&lt;object&gt; --&gt;</span><br><span class="line">    &lt;object data&#x3D;&quot;.&#x2F;01-例子.svg&quot; width&#x3D;&quot;300&quot; height&#x3D;&quot;100&quot; type&#x3D;&quot;image&#x2F;svg+xml&quot; codebase&#x3D;&quot;&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="SVG文件通过svg的命名空间引入html文件"><a href="#SVG文件通过svg的命名空间引入html文件" class="headerlink" title="SVG文件通过svg的命名空间引入html文件"></a>SVG文件通过svg的命名空间引入html文件</h3><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;03-通过svg的命名空间引入html文件&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body &#123;</span><br><span class="line">            height: 1000px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot; xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line">        &lt;!-- fill表示圆的填充颜色，stroke表示边框颜色（不写fill，整个圆都是stroke的颜色） --&gt;</span><br><span class="line">        &lt;circle cx&#x3D;&quot;100&quot; cy&#x3D;&quot;50&quot; r&#x3D;&quot;40&quot; stroke&#x3D;&quot;black&quot; stroke-width&#x3D;&quot;5</span><br><span class="line">        &quot; fill&#x3D;&quot;red&quot; &#x2F;&gt;</span><br><span class="line">        &lt;!-- &lt;circle cx&#x3D;&quot;100&quot; cy&#x3D;&quot;250&quot; r&#x3D;&quot;80&quot; stroke&#x3D;&quot;black&quot; stroke-width&#x3D;&quot;5</span><br><span class="line">        &quot; fill&#x3D;&quot;&quot; &#x2F;&gt; --&gt;</span><br><span class="line">        &lt;!-- 写在style中 --&gt;</span><br><span class="line">        &lt;circle cx&#x3D;&quot;300&quot; cy&#x3D;&quot;50&quot; r&#x3D;&quot;40&quot; style&#x3D;&quot;fill:yellow; stroke:black; stroke-width:5&quot; &#x2F;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;svg&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="SVG的形状"><a href="#SVG的形状" class="headerlink" title="SVG的形状"></a>SVG的形状</h3><h4 id="矩形-lt-rect-gt"><a href="#矩形-lt-rect-gt" class="headerlink" title="矩形&lt;rect&gt;:"></a>矩形<code>&lt;rect&gt;</code>:</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE svg PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD SVG 1.1&#x2F;&#x2F;EN&quot; </span><br><span class="line">&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;Graphics&#x2F;SVG&#x2F;1.1&#x2F;DTD&#x2F;svg11.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot;</span><br><span class="line">xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;rect x&#x3D;&quot;20&quot; y&#x3D;&quot;20&quot; width&#x3D;&quot;250&quot;  rx&#x3D;&quot;20&quot; ry&#x3D;&quot;20&quot; height&#x3D;&quot;250&quot;</span><br><span class="line">style&#x3D;&quot;fill:blue;stroke:pink;stroke-width:5;</span><br><span class="line">fill-opacity:0.1;stroke-opacity:0.9&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<ul>
+<li><p>x 属性定义矩形的左侧位置（例如，x=”0” 定义矩形到浏览器窗口左侧的距离是 0px）</p>
+</li>
+<li><p>y 属性定义矩形的顶端位置（例如，y=”0” 定义矩形到浏览器窗口顶端的距离是 0px）</p>
+</li>
+<li><p>rx 和 ry 属性可使矩形产生圆角。</p>
+</li>
+<li><p>rect 元素的 width 和 height 属性可定义矩形的高度和宽度</p>
+</li>
+<li><p>style 属性用来定义 CSS 属性</p>
+</li>
+<li><p>CSS 的 fill 属性定义矩形的填充颜色（rgb 值、颜色名或者十六进制值）</p>
+</li>
+<li><p>CSS 的 stroke-width 属性定义矩形边框的宽度</p>
+</li>
+<li><p>CSS 的 stroke 属性定义矩形边框的颜色（不写fill，整个图型以外边框颜色为准）</p>
+</li>
+<li><p>CSS 的 fill-opacity 属性定义填充颜色透明度（合法的范围是：0 - 1）</p>
+</li>
+<li><p>CSS 的 stroke-opacity 属性定义笔触颜色的透明度（合法的范围是：0 - 1）</p>
+</li>
+</ul>
+<h4 id="圆型-lt-circle-gt"><a href="#圆型-lt-circle-gt" class="headerlink" title="圆型&lt;circle&gt;"></a>圆型<code>&lt;circle&gt;</code></h4><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE svg PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD SVG 1.1&#x2F;&#x2F;EN&quot; </span><br><span class="line">&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;Graphics&#x2F;SVG&#x2F;1.1&#x2F;DTD&#x2F;svg11.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot;</span><br><span class="line">xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;circle cx&#x3D;&quot;100&quot; cy&#x3D;&quot;50&quot; r&#x3D;&quot;40&quot; stroke&#x3D;&quot;black&quot;</span><br><span class="line">stroke-width&#x3D;&quot;2&quot; fill&#x3D;&quot;red&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<p>cx 和 cy 属性定义圆点的 x 和 y 坐标。如果省略 cx 和 cy，圆的中心会被设置为 (0, 0)</p>
+<p>r 属性定义圆的半径。</p>
+<h4 id="椭圆形-lt-ellipse-gt"><a href="#椭圆形-lt-ellipse-gt" class="headerlink" title="椭圆形&lt;ellipse&gt;"></a>椭圆形<code>&lt;ellipse&gt;</code></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE svg PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD SVG 1.1&#x2F;&#x2F;EN&quot; </span><br><span class="line">&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;Graphics&#x2F;SVG&#x2F;1.1&#x2F;DTD&#x2F;svg11.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot;</span><br><span class="line">xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;ellipse cx&#x3D;&quot;300&quot; cy&#x3D;&quot;150&quot; rx&#x3D;&quot;200&quot; ry&#x3D;&quot;80&quot;</span><br><span class="line">style&#x3D;&quot;fill:rgb(200,100,50);</span><br><span class="line">stroke:rgb(0,0,100);stroke-width:2&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<ul>
+<li><p>cx 属性定义圆点的 x 坐标</p>
+</li>
+<li><p>cy 属性定义圆点的 y 坐标</p>
+</li>
+<li><p>rx 属性定义水平半径</p>
+</li>
+<li><p>ry 属性定义垂直半径</p>
+</li>
+</ul>
+<h4 id="线-lt-polyline-gt"><a href="#线-lt-polyline-gt" class="headerlink" title="线&lt;polyline&gt;"></a>线<code>&lt;polyline&gt;</code></h4><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; standalone&#x3D;&quot;no&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE svg PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD SVG 1.1&#x2F;&#x2F;EN&quot; </span><br><span class="line">&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;Graphics&#x2F;SVG&#x2F;1.1&#x2F;DTD&#x2F;svg11.dtd&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot;</span><br><span class="line">xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;line x1&#x3D;&quot;0&quot; y1&#x3D;&quot;0&quot; x2&#x3D;&quot;300&quot; y2&#x3D;&quot;300&quot;</span><br><span class="line">style&#x3D;&quot;stroke:rgb(99,99,99);stroke-width:2&quot;&#x2F;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;svg&gt;</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<ul>
+<li>x1 属性在 x 轴定义线条的开始</li>
+<li>y1 属性在 y 轴定义线条的开始</li>
+<li>x2 属性在 x 轴定义线条的结束</li>
+<li>y2 属性在 y 轴定义线条的结束</li>
+</ul>
+<h4 id="线、圆、矩形引入-html文件中-通过命名空间"><a href="#线、圆、矩形引入-html文件中-通过命名空间" class="headerlink" title="线、圆、矩形引入.html文件中(通过命名空间)"></a>线、圆、矩形引入.html文件中(通过命名空间)</h4><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;05-画图型&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        body &#123;</span><br><span class="line">            height: 1000px;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;svg width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; version&#x3D;&quot;1.1&quot; xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg&quot;&gt;</span><br><span class="line">        &lt;!-- 圆： --&gt;</span><br><span class="line">        &lt;!-- stroke-width边框，不会撑大圆 --&gt;</span><br><span class="line">        &lt;circle cx&#x3D;&quot;100&quot; cy&#x3D;&quot;50&quot; r&#x3D;&quot;40&quot; stroke&#x3D;&quot;black&quot; stroke-width&#x3D;&quot;5</span><br><span class="line">        &quot; fill&#x3D;&quot;red&quot;&gt;&lt;&#x2F;circle&gt;</span><br><span class="line">        &lt;!-- 矩形： --&gt;</span><br><span class="line">        &lt;!-- rx、ry设置四个角的形状 --&gt;</span><br><span class="line">        &lt;rect width&#x3D;&quot;100&quot; height&#x3D;&quot;100&quot; x&#x3D;&#39;150&#39; y&#x3D;&quot;150&quot; fill&#x3D;&quot;red&quot; rx&#x3D;&quot;40&quot; stroke-width&#x3D;&quot;5&quot; stroke&#x3D;&quot;black&quot;&gt;&lt;&#x2F;rect&gt;</span><br><span class="line">        &lt;!-- 线： --&gt;</span><br><span class="line">        &lt;!-- stroke-opacity透明度 --&gt;</span><br><span class="line">        &lt;line x1&#x3D;&quot;200&quot; y1&#x3D;&quot;100&quot; x2&#x3D;&quot;400&quot; y2&#x3D;&quot;400&quot; stroke&#x3D;&quot;blue&quot; stroke-width&#x3D;&quot;5&quot; stroke-opacity&#x3D;0.5&gt;&lt;&#x2F;line&gt;</span><br><span class="line">    &lt;&#x2F;svg&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
 </search>

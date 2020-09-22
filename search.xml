@@ -2073,6 +2073,6 @@
   <entry>
     <title>今日小结29</title>
     <url>/2020/09/22/%E4%BB%8A%E6%97%A5%E5%B0%8F%E7%BB%9329/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\css\APlayer.min.css"><script src="\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\js\Meting.min.js"></script><h3 id="H5提供两种客户端存储数据的方法"><a href="#H5提供两种客户端存储数据的方法" class="headerlink" title="H5提供两种客户端存储数据的方法"></a>H5提供两种客户端存储数据的方法</h3><h4 id="localStorage方法存储的数据没有时间限制"><a href="#localStorage方法存储的数据没有时间限制" class="headerlink" title="localStorage方法存储的数据没有时间限制"></a>localStorage方法存储的数据没有时间限制</h4><h4 id="sessionStorage方法针对一个session进行数据存储。当用户关闭窗口，数据会被删除"><a href="#sessionStorage方法针对一个session进行数据存储。当用户关闭窗口，数据会被删除" class="headerlink" title="sessionStorage方法针对一个session进行数据存储。当用户关闭窗口，数据会被删除"></a>sessionStorage方法针对一个session进行数据存储。当用户关闭窗口，数据会被删除</h4>]]></content>
   </entry>
 </search>
